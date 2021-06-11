@@ -23,7 +23,7 @@ function afficherTableau($users, $headers)
 					<td><?= $user["age"] ?></td>
 					<td><?= $user["adresse"] ?></td>
 					<td><?= $user["cinema"] ?></td>
-					<td><?= '<a href=formulaireUser.php?id=' . $user["id"] . ' >' . "<img src='images/pencil-64.png'>" . '</a>'; ?></td>
+					<td><?= '<a href=formulaireUser.php?id=' . $user["id"] . ' >' . "<img src='../images/pencil-64.png'>" . '</a>'; ?></td>
 				</tr>
 			<?php endforeach; ?>
 		</tbody>

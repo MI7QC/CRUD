@@ -28,17 +28,17 @@ if ($action == "DELETE") {
 
 if ($action == "CREATE") {
 	createUser($nom, $prenom, $age, $adresse, $cinema);
-	echo "Utilisateur créer <br>";
-	echo "<a href='index.php'>Liste des utilisateurs</a>";
+	echo "Utilisateur créer test <br>";
+	echo "<a href='../index.php'>Liste des utilisateurs</a>";
 }
 
 if ($action == "UPDATE") {
 	updateUser($id, $nom, $prenom, $age, $adresse, $cinema);
-	echo "user update <br>";
-	echo "<a href='index.php'>Liste des utilisateurs</a>";
+	echo "user update sasasass <br>";
+	echo "<a href='../index.php'>Liste des utilisateurs</a>";
 }
 if ($action == "DELETE") {
 	deleteUser($id);
 	echo "user delete <br>";
-	echo "<a href='index.php'>Liste des utilisateurs</a>";
+	echo "<a href='../index.php'>Liste des utilisateurs</a>";
 }

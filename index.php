@@ -3,22 +3,14 @@
 
 <head>
 	<title>CRUD PHP</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="utilisateurs/style.css">
 </head>
 
 <body>
 	<div class="container-full-width">
-		<a href=formulaireUser.php?id=0><img src='images/woman-man-80.png'></a>
+		<a href=utilisateurs/mainPageuser.php><img src=''>Utilisateurs</a>
+		<a href=psi/mainPagePSI.php><img src=''>PSI</a>
 	</div>
-
-	<?php
-	include 'mesFunctionsSQL.php';
-	include 'afficherUser.php';
-
-	$headers = getHeaderTable();
-	$users = getAllUsers();
-	afficherTableau($users, $headers);
-	?>
 
 
 </body>
