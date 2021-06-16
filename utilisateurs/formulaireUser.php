@@ -4,7 +4,7 @@ include 'afficherUser.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 
-if ($id == 0) {
+if ($id==0) {
 	$user = getNewUser();
 	$action = "CREATE";
 	$libelle = "Creer";
@@ -12,6 +12,10 @@ if ($id == 0) {
 	$user = readUser($id);
 	$action = "UPDATE";
 	$libelle = "Mettre a jour";
+}
+
+if (isset($_GET['erreurs']) ){
+$erreurs=json_decode($_GET['erreurs']);
 }
 ?>
 
@@ -25,43 +29,33 @@ if ($id == 0) {
 		<p>
 			<a href="mainPageUser.php">Liste des utilisateurs</a>
 
-			<input type="hidden" name="id" value="<?php if (isset($user['id'])) {
-														echo $user['id'];
-													} ?>" />
+			<input type="hidden" name="id" value="<?php if(isset($user['id'])) {echo $user['id']; } ?>" />
 			<input type="hidden" name="action" value="<?php echo $action;  ?>" />
 		<div>
 			<label for="name">Nom :</label>
-			<input type="text" id="nom" name="nom" value="<?php if (isset($user['nom'])) {
-																echo $user['nom'];
-															} ?>">
-			<span class="error">* <?php if (isset($_GET['nomErr'])) {
-										echo $_GET['nomErr'];
-									}  ?></span>
+			<input type="text" id="nom" name="nom" value="<?php if(isset($user['nom'])) { echo $user['nom'];} ?>">
+			<span class="error"> <?php if(isset($erreurs->nomErr)){ echo $erreurs->nomErr; }  ?></span>
 
 		</div>
 		<div>
 			<label for="prenom">Prenom</label>
-			<input type="text" id="prenom" name="prenom" value="<?php if (isset($user['prenom'])) {
-																	echo $user['prenom'];
-																} ?>" required>
+			<input type="text" id="prenom" name="prenom" value="<?php if(isset($user['prenom'])) { echo $user['prenom'];  }?>" >
+			<span class="error"> <?php if(isset($erreurs->prenomErr)){ echo $erreurs->prenomErr; }  ?></span>
+			
 		</div>
 		<div>
 			<label for="age">Age:</label>
-			<input type="text" id="age" name="age" value="<?php if (isset($user['age'])) {
-																echo $user['age'];
-															} ?>" required>
+			<input type="text" id="age" name="age" value="<?php if(isset($user['age'])) { echo $user['age']; } ?>">
+			<span class="error"> <?php if(isset($erreurs->ageErr)){ echo $erreurs->ageErr; }  ?></span>
 		</div>
 		<div>
 			<label for="adresse">adresse :</label>
-			<input id="adresse" name="adresse" value="<?php if (isset($user['adresse'])) {
-															echo $user['adresse'];
-														} ?>" required></input>
+			<input id="adresse" name="adresse" value="<?php if(isset($user['adresse'])) { echo $user['adresse']; } ?>" ></input>
+			<span class="error"> <?php if(isset($erreurs->adresseErr)){ echo $erreurs->adresseErr; }  ?></span>
 		</div>
 		<div>
 			<label for="cinema">cinema :</label>
-			<input type="checkbox" id="cinema" name="cinema" <?php if (isset($user['cinema'])) {
-																	echo "checked";
-																} ?>>
+			<input type="checkbox" id="cinema" name="cinema" <?php if  (isset($user['cinema'] )) { echo "checked";} ?>>
 		</div>
 		<div class="button">
 			<button type="submit" name="envoi"><?php echo $libelle;  ?></button>

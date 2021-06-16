@@ -66,9 +66,13 @@ button {
 *
 */
 
-/*DÉBUT SECTION MESFUNCTIONTABLE.PHP 
+/*DÉBUT SECTION MESFUNCTIONTABLE.PHP */
 
-box-shadow pour ajouter une ombre transparente subtile autour de la table
+.error {
+  color: #ff0000;
+}
+
+/*box-shadow pour ajouter une ombre transparente subtile autour de la table
 border-collapse pour s'assurer qu'il n'y a pas d'espace entre les bords des cellules*/
 .styled-table {
   margin: auto;
@@ -118,7 +122,18 @@ border-collapse pour s'assurer qu'il n'y a pas d'espace entre les bords des cell
   display: flex;
   justify-content: center;
 }
-body a img {
+
+
+.img-with-text {
+  padding: 50px;
   width: 64px;
-  height: 64px;
+}
+
+.img-with-text img {
+  display: block;
+  margin: 0 auto;
+}
+.img-with-text a{
+  display: flex;
+  justify-content: center;
 }

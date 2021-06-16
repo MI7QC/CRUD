@@ -1,8 +1,8 @@
-/*DÉBUT SECTION : FORM CREATION UTILISATION formulaireUser.PHP*/
+/*DÉBUT SECTION : FORM CREATION UTILISATION formulairePSI.PHP*/
 form {
   /* Uniquement centrer le formulaire sur la page */
   margin: 0 auto;
-  width: 400px;
+  width: 1080px;
   /* Encadré pour voir les limites du formulaire */
   padding: 1em;
   border: 1px solid #ccc;
@@ -12,6 +12,7 @@ form {
 form div + div {
   margin-top: 1em;
 }
+
 
 label {
   /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
@@ -66,7 +67,7 @@ button {
 *
 */
 
-/*DÉBUT SECTION MESFUNCTIONTABLE.PHP 
+/*DÉBUT SECTION afficher.PHP 
 
 box-shadow pour ajouter une ombre transparente subtile autour de la table
 border-collapse pour s'assurer qu'il n'y a pas d'espace entre les bords des cellules*/

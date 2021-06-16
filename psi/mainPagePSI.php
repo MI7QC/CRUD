@@ -3,24 +3,21 @@
 
 <head>
     <title>CRUD PHP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/psi.css">
 </head>
 
 <body>
     <div class="container-full-width">
-        <a href=formulaireUser.php?id=0><img src='../images/woman-man-80.png'></a>
+        <div class="img-with-text">
+            <img src='../images/list64.png' alt="user" />
+            <a href=listPSI.php>List_Client_PSI</a>
+        </div>
+
+        <div class="img-with-text">
+            <img src='../images/form96.png' alt="user" />
+            <a href=formulairePSI.php>Form PSI</a>
+        </div>
     </div>
-
-    <?php
-    include 'mesFunctionsSQL.php';
-    include 'afficherUser.php';
-
-    $headers = getHeaderTable();
-    $psi = getAllPSI();
-    afficherTableau($psi, $headers);
-    ?>
-
-
 </body>
 
 </html>
