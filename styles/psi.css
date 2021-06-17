@@ -35,16 +35,17 @@
     font-weight:bold;
   }
   
-  H1, h2 {
+  H1, h2, h3 {
     JUSTIFY-CONTENT: CENTER;
     DISPLAY: FLEX;
+   
   }
 
   .containerCent {
     margin: 0 auto;
     width: 768px;
     display: flex;
-    justify-content: center;
+   
     border: 1px solid #ccc;
  
   }
