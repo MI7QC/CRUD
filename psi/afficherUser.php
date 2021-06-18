@@ -17,17 +17,16 @@ function afficherTableau($psis, $headers)
 			<?php foreach ($psis as $psi) : ?>
 
 				<tr>
-					<td><?= $psi["idPSI"] ?></td>
+					<td><?= $psi["idPsi"] ?></td>
 					<td><?= $psi["nomADB"] ?></td>
-					<td><?= $psi["nomBatiment"] ?></td>
 					<td><?= $psi["coordonnateur"] ?></td>
-					<td><?= $psi["cellJour"] ?></td>
-					<td><?= $psi["cellSoir"] ?></td>
+					<td><?= $psi["telJour"] ?></td>
+					<td><?= $psi["telSoir"] ?></td>
 					<td><?= $psi["nomADP"] ?></td>
 					<td><?= $psi["responsable"] ?></td>
-					<td><?= $psi["cellADP"] ?></td>
+					<td><?= $psi["tel"] ?></td>
 					<td><?= $psi["courriel"] ?></td>
-					<td><?= '<a href=psi/formulairePSI.php?id=' . $psi["idPSI"] . ' >' . "<img src='../images/pencil-64.png'>" . '</a>'; ?></td>
+					<td><?= '<a href=formulairePSI.php?id=' . $psi["idPsi"] . ' >' . "<img src='../images/pencil-64.png'>" . '</a>'; ?></td>
 				</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -41,13 +40,12 @@ function getHeaderTable()
 	$headers = array();
 	$headers[] = "ID";
 	$headers[] = "nomADB";
-	$headers[] = "nomBatiment";
 	$headers[] = "coordonnateur";
 	$headers[] = "cellJour";
 	$headers[] = "cellSoir";
 	$headers[] = "nomADP";
 	$headers[] = "responsable";
-	$headers[] = "cellADP";
+	$headers[] = "tel";
 	$headers[] = "courriel";
 	$headers[] = "Modifier";
 

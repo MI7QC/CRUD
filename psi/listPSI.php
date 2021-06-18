@@ -8,7 +8,14 @@
 
 <body>
     <div class="container-full-width">
-        <!-- <a href=formulaireUser.php?id=0><img src='../images/woman-man-80.png'></a> -->
+        <!-- <a href=formulairePSI.php?id=0><img src='../images/woman-man-80.png'></a> -->
+    </div>
+    <div class="container-full-width">
+        <?php if (isset($_GET['message'])) {
+        ?>
+            <span class="message"><?php echo $_GET['message']; ?></span>
+        <?php
+        } ?>
     </div>
 
     <?php

@@ -16,7 +16,7 @@ if ($action == "DELETE") {
 		$cinema = 0;
 	} else {
 		$cinema = 1;
-	}
+	}	
 }
 
 

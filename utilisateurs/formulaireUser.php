@@ -55,7 +55,7 @@ $erreurs=json_decode($_GET['erreurs']);
 		</div>
 		<div>
 			<label for="cinema">cinema :</label>
-			<input type="checkbox" id="cinema" name="cinema" <?php if  (isset($user['cinema'] )) { echo "checked";} ?>>
+			<input type="checkbox" id="cinema" name="cinema" <?php if ($user['cinema'] == 1) $user['cinema'] = "checked"; echo $user['cinema'] ?>>
 		</div>
 		<div class="button">
 			<button type="submit" name="envoi"><?php echo $libelle;  ?></button>

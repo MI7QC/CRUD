@@ -25,12 +25,16 @@ function getAllPSI()
 }
 
 // creer un user
-function createUser($nom, $prenom, $age, $adresse, $cinema)
+function createUser($nomADB, $coordonnateur, $telJour, $telSoir, $nomADP, $responsable, $tel, $courriel,
+$principale, $autre, $nombreDeSousSol, $NombreDetage, $nombreDappentis, $nombreDeGrenier, $ascenseurNombre, $monteChargeNombre,
+$communicationDansAscendeur, $rappelAutomatique, $rappelManuel, $ascenseurPompier, $nombreDeCageDescalierDeSecours)
 {
 	try {
 		$con = getDatabaseConnexion();
-		$sql = "INSERT INTO utilisateurs (nom, prenom, age, adresse, cinema) 
-					VALUES ('$nom', '$prenom', '$age' ,'$adresse','$cinema')";
+		$sql = "INSERT INTO psi (nomADB, coordonnateur, telJour, telSoir, nomADP, responsable, tel, courriel,
+		principale,autre,nombreDeSousSol,NombreDetage,nombreDappentis,nombreDeGrenier,ascenseurNombre,monteChargeNombre,communicationDansAscendeur,rappelAutomatique,rappelManuel,ascenseurPompier,nombreDeCageDescalierDeSecours) 
+					VALUES ('$nomADB', '$coordonnateur', '$telJour' ,'$telSoir','$nomADP','$responsable','$tel','$courriel',
+					'$principale','$autre','$nombreDeSousSol','$NombreDetage','$nombreDappentis','$nombreDeGrenier','$ascenseurNombre','$monteChargeNombre','$communicationDansAscendeur','$rappelAutomatique','$rappelManuel','$ascenseurPompier','$nombreDeCageDescalierDeSecours')";
 		$con->exec($sql);
 	} catch (PDOException $e) {
 		echo $sql . "<br>" . $e->getMessage();
@@ -41,7 +45,7 @@ function createUser($nom, $prenom, $age, $adresse, $cinema)
 function readUser($id)
 {
 	$con = getDatabaseConnexion();
-	$requete = "SELECT * from utilisateurs where id = '$id' ";
+	$requete = "SELECT * from psi where idPsi = '$id' ";
 	$stmt = $con->query($requete);
 	$row = $stmt->fetchAll();
 	if (!empty($row)) {
@@ -50,17 +54,34 @@ function readUser($id)
 }
 
 //met à jour le user
-function updateUser($id, $nom, $prenom, $age, $adresse, $cinema)
+function updateUser($id, $nomADB, $coordonnateur, $telJour, $telSoir, $nomADP, $responsable, $tel, $courriel,
+$principale, $autre, $nombreDeSousSol, $NombreDetage, $nombreDappentis, $nombreDeGrenier, $ascenseurNombre, $monteChargeNombre, $communicationDansAscendeur, $rappelAutomatique, $rappelManuel, $ascenseurPompier, $nombreDeCageDescalierDeSecours)
 {
 	try {
 		$con = getDatabaseConnexion();
-		$requete = "UPDATE utilisateurs set 
-						nom = '$nom',
-						prenom = '$prenom',
-						age = '$age',
-						adresse = '$adresse', 
-						cinema = '$cinema' 
-						where id = '$id' ";
+		$requete = "UPDATE psi set 
+						nomADB = '$nomADB',
+						coordonnateur = '$coordonnateur',
+						telJour = '$telJour',
+						telSoir = '$telSoir', 
+						nomADP = '$nomADP', 
+						responsable = '$responsable', 
+						tel = '$tel', 
+						courriel = '$courriel',
+						principale = '$principale',
+						autre = '$autre',
+						nombreDeSousSol = '$nombreDeSousSol',
+						NombreDetage = '$NombreDetage',
+						nombreDappentis = '$nombreDappentis',
+						nombreDeGrenier = '$nombreDeGrenier',
+						ascenseurNombre = '$ascenseurNombre',
+						monteChargeNombre = '$monteChargeNombre',
+						communicationDansAscendeur = '$communicationDansAscendeur',
+						rappelAutomatique = '$rappelAutomatique',
+						rappelManuel = '$rappelManuel',
+						ascenseurPompier = '$ascenseurPompier',
+						nombreDeCageDescalierDeSecours = '$nombreDeCageDescalierDeSecours'
+						where idPsi = '$id' ";
 		$stmt = $con->query($requete);
 	} catch (PDOException $e) {
 		echo $sql . "<br>" . $e->getMessage();
@@ -72,7 +93,7 @@ function deleteUser($id)
 {
 	try {
 		$con = getDatabaseConnexion();
-		$requete = "DELETE from utilisateurs where id = '$id' ";
+		$requete = "DELETE from psi where idPsi = '$id' ";
 		$stmt = $con->query($requete);
 	} catch (PDOException $e) {
 		echo $sql . "<br>" . $e->getMessage();

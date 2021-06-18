@@ -68,3 +68,6 @@ ALTER TABLE `utilisateurs`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `age`, `adresse`, `cinema`) VALUES ('1', 'asd', 'asd', '22', '23sdasdsadsa', '0');

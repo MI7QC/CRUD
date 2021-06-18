@@ -22,20 +22,21 @@ $erreurs=json_decode($_GET['erreurs']);
 <html>
 <header>
 	<link rel="stylesheet" href="../styles/psi.css">
+	<style>.error{color: red;}</style>
 </header>
 <a href="mainPagePSI.php">Menu PSI</a>
 <body>
-	<form class=""; action="createUpdateDeleteUser.php" method="post">
+	<form class=""; action="createUpdateDeletePsi.php" method="post">
 	
 			<h1>Évaluation pour plan de sécurité incendie</h1>
 
-			<input type="hidden" name="id" value="<?php if(isset($user['id'])) {echo $user['id']; } ?>" />
+			<input type="hidden" name="id" value="<?php if(isset($user['idPsi'])) {echo $user['idPsi']; } ?>" />
 			<input type="hidden" name="action" value="<?php echo $action;  ?>" /> 
 		<div class="containerCent">
 
 			<div class="cinquante">
 				<p class="title">Nom & Adresse Du Bâtiment:</p>
-				<textarea style="resize: none;" type="text" id="nomADB" name="nomADB" value="<?php if(isset($user['nomADB'])) { echo $user['nomADB'];} ?>"></textarea>
+				<textarea style="resize: none;" type="text" id="nomADB" name="nomADB" >  <?php if(isset($user['nomADB'])) { echo $user['nomADB'];}  ?></textarea>
 				<span class="error"> <?php if(isset($erreurs->nomADBErr)){ echo $erreurs->nomADBErr; }  ?></span>
 			
 				<div class="input">
@@ -59,7 +60,7 @@ $erreurs=json_decode($_GET['erreurs']);
 
 			<div class="cinquante">
 				<p class="title">Nom & Adresse Du Propriétaire</p>
-				<textarea style="resize: none;" type="text" id="nomADP" name="nomADP" value="<?php if(isset($user['nomADP'])) { echo $user['nomADP'];} ?>"></textarea>
+				<textarea style="resize: none;" type="text" id="nomADP" name="nomADP" > <?php if(isset($user['nomADP'])) { echo $user['nomADP'];} ?></textarea>
 				<span class="error"> <?php if(isset($erreurs->nomADPErr)){ echo $erreurs->nomADPErr; }  ?></span>
 			
 				<div class="input">
@@ -69,9 +70,9 @@ $erreurs=json_decode($_GET['erreurs']);
 				</div>
 
 				<div class="input">
-					<label for="Tél">Téléphone :</label>
-					<input type="text" id="Tél" name="Tél" value="<?php if(isset($user['Tél'])) { echo $user['Tél'];  }?>" >
-					<span class="error"> <?php if(isset($erreurs->TélErr)){ echo $erreurs->TélErr; }  ?></span>
+					<label for="Tel">Téléphone :</label>
+					<input type="text" id="tel" name="tel" value="<?php if(isset($user['tel'])) { echo $user['tel'];  }?>" >
+					<span class="error"> <?php if(isset($erreurs->telErr)){ echo $erreurs->telErr; }  ?></span>
 				</div>
 
 				<div class="input">
@@ -145,10 +146,10 @@ $erreurs=json_decode($_GET['erreurs']);
 				<div class="inputsoixantedixpourcent ">
 					<div >
 						<label for="rappelAutomatique">Rappel Automatique </label>
-						<input type="checkbox" id="rappelAutomatique" name="rappelAutomatique" <?php if  (isset($user['rappelAutomatique'] )) { echo "checked";} ?>>
+						<input type="checkbox" id="rappelAutomatique" name="rappelAutomatique" <?php if ($user['rappelAutomatique'] == 1) $user['rappelAutomatique'] = "checked"; echo $user['rappelAutomatique'] ?>>
 
 						<label class="rappelM" for="rappelManuel">Rappel Manuel </label>
-						<input type="checkbox" id="rappelManuel" name="rappelManuel" <?php if  (isset($user['rappelManuel'] )) { echo "checked";} ?>>
+						<input type="checkbox" id="rappelManuel" name="rappelManuel" <?php if ($user['rappelManuel'] == 1) $user['rappelManuel'] = "checked"; echo $user['rappelManuel'] ?>>
 
 					</div> 
 				</div>
@@ -168,7 +169,7 @@ $erreurs=json_decode($_GET['erreurs']);
 		</div>
 
 
-		<div class="containerCent">
+		<!-- <div class="containerCent">
 		
 			<div class="trentepourcentPartTwo trentepourcent">
 				<p >4 Occupation du bâtiment (nombre de personnes)</p>
@@ -945,7 +946,7 @@ $erreurs=json_decode($_GET['erreurs']);
 				<input type="checkbox" id="PanneaucontroleP" name="PanneaucontroleP" <?php if  (isset($user['PanneaucontroleP'] )) { echo "checked";} ?>>
 				<label for="PanneaucontroleP">Panneau de contrôle</label>
 			</div>
-		</div>
+		</div>  -->
 
 
 		<div class="button containerCent" style="margin-top: 20px; " >
@@ -956,9 +957,9 @@ $erreurs=json_decode($_GET['erreurs']);
 	<br>
 
 	<?php if ($action != "CREATE") { ?>
-		<form action="createUpdateDeleteUser.php" method="post">
+		<form action="createUpdateDeletePsi.php" method="post">
 			<input type="hidden" name="action" value="DELETE" />
-			<input type="hidden" name="id" value="<?php echo $user['id'];  ?>" />
+			<input type="hidden" name="id" value="<?php echo $user['idPsi'];  ?>" />
 			<p>
 			<div class="button">
 				<button type="submit">Supprimer</button>
@@ -966,6 +967,7 @@ $erreurs=json_decode($_GET['erreurs']);
 			</p>
 		</form>
 	<?php } ?>
+
 
 </body>
 
