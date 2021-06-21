@@ -169,7 +169,7 @@ $erreurs=json_decode($_GET['erreurs']);
 		</div>
 
 
-		<!-- <div class="containerCent">
+		 <div class="containerCent">
 		
 			<div class="trentepourcentPartTwo trentepourcent">
 				<p >4 Occupation du bâtiment (nombre de personnes)</p>
@@ -243,7 +243,7 @@ $erreurs=json_decode($_GET['erreurs']);
 			</div>
 		</div>
 
-		<div class="containerCent">
+		 <div class="containerCent">
 				
 			<div class="trentepourcentPartTwo  trentepourcent">
 				<p>5 Types D'occupation</p>
@@ -377,7 +377,7 @@ $erreurs=json_decode($_GET['erreurs']);
 			</div>
 		</div>
 
-
+		
 		<div class="containerCent">
 			<div class="trentepourcent ">
 				<p >6 Équipements de protection</p>
@@ -385,20 +385,20 @@ $erreurs=json_decode($_GET['erreurs']);
 
 			<div class="soixantedixpourcent  " >	
 				<div style="margin-top: 20px;">
-					<input type="checkbox" id="sai" name="sai" <?php if  (isset($user['sai'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="sai" name="sai" <?php if ($user['sai'] == 1) $user['sai'] = "checked"; echo $user['sai'] ?>>
 					<label for="sai">Système d'alarme incendie. Marque:</label>
 					<input type="text" id="saiMarque" name="saiMarque" value="<?php if(isset($user['saiMarque'])) { echo $user['saiMarque'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->saiMarqueErr)){ echo $erreurs->saiMarqueErr; }  ?></span>
 				</div> 
 
 				<div style="margin-top: 10px; margin-left: 10px; " >
-					<input type="checkbox" id="adressable" name="adressable" <?php if  (isset($user['adressable'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="adressable" name="adressable" <?php if ($user['adressable'] == 1) $user['adressable'] = "checked"; echo $user['adressable'] ?>>
 					<label for="adressable">Adressable</label>
-					<input type="checkbox" id="zone" name="zone" <?php if  (isset($user['zone'] )) { echo "checked";} ?>>
-					<label for="zone">Zoné</label>
-					<input type="checkbox" id="unEtape" name="unEtape" <?php if  (isset($user['unEtape'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="zoneX" name="zoneX" <?php if ($user['zoneX'] == 1) $user['zoneX'] = "checked"; echo $user['zoneX'] ?>>
+					<label for="zoneX">Zoné</label>
+					<input type="checkbox" id="unEtape" name="unEtape" <?php if ($user['unEtape'] == 1) $user['unEtape'] = "checked"; echo $user['unEtape'] ?>>
 					<label for="unEtape">Un Étape</label>
-					<input type="checkbox" id="deuxetape" name="deuxetape" <?php if  (isset($user['deuxetape'] )) { echo "checked";} ?>>	
+					<input type="checkbox" id="deuxetape" name="deuxetape" <?php if ($user['deuxetape'] == 1) $user['deuxetape'] = "checked"; echo $user['deuxetape'] ?>>	
 					<label for="deuxetape">Deux Étapes</label>
 				</div>
 
@@ -406,10 +406,10 @@ $erreurs=json_decode($_GET['erreurs']);
 				<div style="margin-top: 10px; margin-left: 10px; " >
 					<label for="sideuxetape">Si Deux Étapes :</label>
 					<label for="etp">En Tout Temps </label>
-					<input type="checkbox" id="etp" name="etp" <?php if  (isset($user['etp'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="etp" name="etp" <?php if ($user['etp'] == 1) $user['etp'] = "checked"; echo $user['etp'] ?>>
 
 					<label for="periode">Période (hres) :</label>
-					<input type="checkbox" id="periode" name="periode" <?php if  (isset($user['periode'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="periode" name="periode" <?php if ($user['periode'] == 1) $user['periode'] = "checked"; echo $user['periode'] ?>>
 					<input style="width: 20%" type="text" id="pheure" name="pheure" value="<?php if(isset($user['pheure'])) { echo $user['pheure'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->pheureErr)){ echo $erreurs->pheureErr; }  ?></span>
 				</div>
@@ -420,13 +420,13 @@ $erreurs=json_decode($_GET['erreurs']);
 					<span class="error"> <?php if(isset($erreurs->panneauSErr)){ echo $erreurs->panneauSErr; }  ?></span>	
 
 					<label for="annonciateur">Annonciateur Situé :</label>
-					<input type="checkbox" id="annonciateur" name="annonciateur" <?php if  (isset($user['annonciateur'] )) { echo "checked";} ?>>
-					<input style="width: 20%" type="text" id="pheure" name="pheure" value="<?php if(isset($user['pheure'])) { echo $user['pheure'];  }?>" >
-					<span class="error"> <?php if(isset($erreurs->pheureErr)){ echo $erreurs->pheureErr; }  ?></span>
+					<input type="checkbox" id="annonciateur" name="annonciateur" <?php if ($user['annonciateur'] == 1) $user['annonciateur'] = "checked"; echo $user['annonciateur'] ?>>
+					<input style="width: 20%" type="text" id="textannonciateur" name="textannonciateur" value="<?php if(isset($user['textannonciateur'])) { echo $user['textannonciateur'];  }?>" >
+					<span class="error"> <?php if(isset($erreurs->textannonciateurErr)){ echo $erreurs->textannonciateurErr; }  ?></span>
 				</div>
 
 				<div style="margin-top: 10px;">
-					<input type="checkbox" id="rac" name="rac" <?php if  (isset($user['rac'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="rac" name="rac" <?php if ($user['rac'] == 1) $user['rac'] = "checked"; echo $user['rac'] ?>>
 					<label for="rac">Relié à Centrale (nom & tél) :</label>
 					<input type="text" id="racNomTel" name="racNomTel" value="<?php if(isset($user['racNomTel'])) { echo $user['racNomTel'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->racNomTelErr)){ echo $erreurs->racNomTelErr; }  ?></span>
@@ -434,7 +434,7 @@ $erreurs=json_decode($_GET['erreurs']);
 
 
 				<div style="margin-top: 10px;">
-					<input type="checkbox" id="scu" name="scu" <?php if  (isset($user['scu'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="scu" name="scu" <?php if ($user['scu'] == 1) $user['scu'] = "checked"; echo $user['scu'] ?>>
 					<label for="scu">Système Communication Urgence. Marque:</label>
 					<input type="text" id="scuMarque" name="scuMarque" value="<?php if(isset($user['scuMarque'])) { echo $user['scuMarque'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->scuMarqueErr)){ echo $erreurs->scuMarqueErr; }  ?></span>
@@ -442,37 +442,37 @@ $erreurs=json_decode($_GET['erreurs']);
 			</div>
 		</div>
 
-
+		
 		<div class="containerCent">
 			<div class="trentepourcent ">
 				<p >7 Fonctions Auxiliaires</p>
 			</div>
 
 			<div class="soixantedixpourcent">  
-				<div style="margin-top: 10px; margin-left: 10px; display: flex; justify-content: space-evenly;" >
+				<div style="margin-top: 10px; margin-left: 10px; " >
 					<label for="rda">Rappel Des Ascenceurs</label>
-					<input type="checkbox" id="rda" name="rda" <?php if  (isset($user['rda'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="rda" name="rda" <?php if ($user['rda'] == 1) $user['rda'] = "checked"; echo $user['rda'] ?>>
 					<label for="adv">Arrêt de Ventilation</label>
-					<input type="checkbox" id="adv" name="adv" <?php if  (isset($user['adv'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="adv" name="adv" <?php if ($user['adv'] == 1) $user['adv'] = "checked"; echo $user['adv'] ?>>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px; " >
 					<label for="pressE">Pressurisation Escalier</label>
-					<input type="checkbox" id="pressE" name="pressE" <?php if  (isset($user['pressE'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="pressE" name="pressE" <?php if ($user['pressE'] == 1) $user['pressE'] = "checked"; echo $user['pressE'] ?>>
 				</div>
 
-				<div style="margin-top: 10px; margin-left: 10px; display: flex; justify-content: space-evenly;" >
+				<div style="margin-top: 10px; margin-left: 10px; " >
 					<label for="dea">Déverrouillage électro-aimant</label>
-					<input type="checkbox" id="dea" name="dea" <?php if  (isset($user['dea'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="dea" name="dea" <?php if ($user['dea'] == 1) $user['dea'] = "checked"; echo $user['dea'] ?>>
 					<label for="rdrm">Relâche des Retenus Magnétiques</label>
-					<input type="checkbox" id="rdrm" name="rdrm" <?php if  (isset($user['rdrm'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="rdrm" name="rdrm" <?php if ($user['rdrm'] == 1) $user['rdrm'] = "checked"; echo $user['rdrm'] ?>>
 				</div>
 
-				<div style="margin-top: 10px; margin-left: 10px; display: flex; justify-content: space-evenly;" >
+				<div style="margin-top: 10px; margin-left: 10px; " >
 					<label for="tac">Transmission à Centrale</label>
-					<input type="checkbox" id="tac" name="tac" <?php if  (isset($user['tac'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="tac" name="tac" <?php if ($user['tac'] == 1) $user['tac'] = "checked"; echo $user['tac'] ?>>
 					<label for="aaag">Arrêt alimentation au gaz (friteuses)</label>
-					<input type="checkbox" id="aaag" name="aaag" <?php if  (isset($user['aaag'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="aaag" name="aaag" <?php if ($user['aaag'] == 1) $user['aaag'] = "checked"; echo $user['aaag'] ?>>
 				</div>
 
 				
@@ -495,59 +495,59 @@ $erreurs=json_decode($_GET['erreurs']);
 			<div class="soixantedixpourcent  " >	
 				
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="sdga" name="sdga" <?php if  (isset($user['sdga'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="sdga" name="sdga" <?php if ($user['sdga'] == 1) $user['sdga'] = "checked"; echo $user['sdga'] ?>>
 					<label for="sdga">Système de gicleurs automatique</label>
-					<input type="checkbox" id="eau" name="eau" <?php if  (isset($user['eau'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="eau" name="eau" <?php if ($user['eau'] == 1) $user['eau'] = "checked"; echo $user['eau'] ?>>
 					<label for="eau">Eau</label>
-					<input type="checkbox" id="air" name="air" <?php if  (isset($user['air'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="air" name="air" <?php if ($user['air'] == 1) $user['air'] = "checked"; echo $user['air'] ?>>
 					<label for="air">Air</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="dssogs" name="dssogs" <?php if  (isset($user['dssogs'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="dssogs" name="dssogs" <?php if ($user['dssogs'] == 1) $user['dssogs'] = "checked"; echo $user['dssogs'] ?>>
 					<label for="dssogs">Dans sous-sol ou garage seulement</label>
-					<input type="checkbox" id="dtlb" name="dtlb" <?php if  (isset($user['dtlb'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="dtlb" name="dtlb" <?php if ($user['dtlb'] == 1) $user['dtlb'] = "checked"; echo $user['dtlb'] ?>>
 					<label for="dtlb">Dans tout le bâtiment</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="pompeAfeu" name="pompeAfeu" <?php if  (isset($user['pompeAfeu'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="pompeAfeu" name="pompeAfeu" <?php if ($user['pompeAfeu'] == 1) $user['pompeAfeu'] = "checked"; echo $user['pompeAfeu'] ?>>
 					<label for="pompeAfeu">Pompe à feu:</label>
 					
 					<input style="width: 20%" type="text" id="pafeu" name="pafeu" value="<?php if(isset($user['pafeu'])) { echo $user['pafeu'];  }?>" >
 					<label for="pafeu">GPM</label>
 					<span class="error"> <?php if(isset($erreurs->pafeuErr)){ echo $erreurs->pafeuErr; }  ?></span>
 					
-					<input type="checkbox" id="ralg" name="ralg" <?php if  (isset($user['ralg'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="ralg" name="ralg" <?php if ($user['ralg'] == 1) $user['ralg'] = "checked"; echo $user['ralg'] ?>>
 					<label for="ralg">Relié à la génératrice</label>
 				</div>
 
 		
 				<div style="margin-top: 10px; margin-left: 10px; " >
-					<input type="checkbox" id="vds" name="vds" <?php if  (isset($user['vds'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="vds" name="vds" <?php if ($user['vds'] == 1) $user['vds'] = "checked"; echo $user['vds'] ?>>
 					<label for="vds">Vannes de section</label>
 
-					<input type="checkbox" id="cageE" name="cageE" <?php if  (isset($user['cageE'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="cageE" name="cageE" <?php if ($user['cageE'] == 1) $user['cageE'] = "checked"; echo $user['cageE'] ?>>
 					<label for="cageE">Cage escaliers</label>
 
-					<input type="checkbox" id="autreShuitdeux" name="autreShuitdeux" <?php if  (isset($user['autreShuitdeux'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="autreShuitdeux" name="autreShuitdeux" <?php if ($user['autreShuitdeux'] == 1) $user['autreShuitdeux'] = "checked"; echo $user['autreShuitdeux'] ?>>
 					<label for="autreShuitdeux">Autre :</label>
 					<input type="text" id="autreShuit" name="autreShuit" value="<?php if(isset($user['autreShuit'])) { echo $user['autreShuit'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->autreShuitErr)){ echo $erreurs->autreShuitErr; }  ?></span>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="bid" name="bid" <?php if  (isset($user['bid'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="bid" name="bid" <?php if ($user['bid'] == 1) $user['bid'] = "checked"; echo $user['bid'] ?>>
 					<label for="bid">Boyaux incendies de 1½</label>
 					
-					<input type="checkbox" id="raccordP" name="raccordP" <?php if  (isset($user['raccordP'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="raccordP" name="raccordP" <?php if ($user['raccordP'] == 1) $user['raccordP'] = "checked"; echo $user['raccordP'] ?>>
 					<label for="raccordP">Raccord pompier 2½</label>
-					<input style="width: 25%"type="text" id="autreShuit" name="autreShuit" value="<?php if(isset($user['autreShuit'])) { echo $user['autreShuit'];  }?>" >
-					<span class="error"> <?php if(isset($erreurs->autreShuitErr)){ echo $erreurs->autreShuitErr; }  ?></span>
+					<input style="width: 25%"type="text" id="raccord" name="raccord" value="<?php if(isset($user['raccord'])) { echo $user['raccord'];  }?>" >
+					<span class="error"> <?php if(isset($erreurs->raccordErr)){ echo $erreurs->raccordErr; }  ?></span>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="extincteursp" name="extincteursp" <?php if  (isset($user['extincteursp'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="extincteursp" name="extincteursp" <?php if ($user['extincteursp'] == 1) $user['extincteursp'] = "checked"; echo $user['extincteursp'] ?>>
 					<label for="extincteursp">Extincteurs Portatif.</label>
 				
 					<label for="typeE">Type :</label>
@@ -556,50 +556,50 @@ $erreurs=json_decode($_GET['erreurs']);
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="sep" name="sep" <?php if  (isset($user['sep'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="sep" name="sep" <?php if ($user['sep'] == 1) $user['sep'] = "checked"; echo $user['sep'] ?>>
 					<label for="sep">Système d'extinctions spéciaux</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="efixe" name="efixe" <?php if  (isset($user['efixe'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="efixe" name="efixe" <?php if ($user['efixe'] == 1) $user['efixe'] = "checked"; echo $user['efixe'] ?>>
 					<label for="efixe">Extinction fixe (hotte de cuisine)</label>
 					<input style="width: 25%"type="text" id="efixetext" name="efixetext" value="<?php if(isset($user['efixetext'])) { echo $user['efixetext'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->efixetextErr)){ echo $erreurs->efixetextErr; }  ?></span>
 
-					<input type="checkbox" id="relieUn" name="relieUn" <?php if  (isset($user['relieUn'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="relieUn" name="relieUn" <?php if ($user['relieUn'] == 1) $user['relieUn'] = "checked"; echo $user['relieUn'] ?>>
 					<label for="relieUn">Relié au P/A</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="eGaz" name="eGaz" <?php if  (isset($user['eGaz'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="eGaz" name="eGaz" <?php if ($user['eGaz'] == 1) $user['eGaz'] = "checked"; echo $user['eGaz'] ?>>
 					<label for="eGaz">Extinction au gaz(type)</label>
 					<input style="width: 37%"type="text" id="eGazText" name="eGazText" value="<?php if(isset($user['eGazText'])) { echo $user['eGazText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->eGazTextErr)){ echo $erreurs->eGazTextErr; }  ?></span>
 
-					<input type="checkbox" id="reliedeux" name="reliedeux" <?php if  (isset($user['reliedeux'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="reliedeux" name="reliedeux" <?php if ($user['reliedeux'] == 1) $user['reliedeux'] = "checked"; echo $user['reliedeux'] ?>>
 					<label for="reliedeux">Relié au P/A</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="preaction" name="preaction" <?php if  (isset($user['preaction'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="preaction" name="preaction" <?php if ($user['preaction'] == 1) $user['preaction'] = "checked"; echo $user['preaction'] ?>>
 					<label for="preaction">Préaction</label>
 					
-					<input type="checkbox" id="delugue" name="delugue" <?php if  (isset($user['delugue'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="delugue" name="delugue" <?php if ($user['delugue'] == 1) $user['delugue'] = "checked"; echo $user['delugue'] ?>>
 					<label for="delugue">Délugue</label>
 					<input style="width: 39%"type="text" id="delugueText" name="delugueText" value="<?php if(isset($user['delugueText'])) { echo $user['delugueText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->delugueTextErr)){ echo $erreurs->delugueTextErr; }  ?></span>
 
-					<input type="checkbox" id="relietrois" name="relietrois" <?php if  (isset($user['relietrois'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="relietrois" name="relietrois" <?php if ($user['relietrois'] == 1) $user['relietrois'] = "checked"; echo $user['relietrois'] ?>>
 					<label for="relietrois">Relié au P/A</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="autresectionhuit" name="autresectionhuit" <?php if  (isset($user['autresectionhuit'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="autresectionhuit" name="autresectionhuit" <?php if ($user['autresectionhuit'] == 1) $user['autresectionhuit'] = "checked"; echo $user['autresectionhuit'] ?>>
 					<label for="autresectionhuit">Autre (spécifiez)</label>
 					<input style="width: 47%"type="text" id="autersHuitText" name="autersHuitText" value="<?php if(isset($user['autersHuitText'])) { echo $user['autersHuitText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->autersHuitTextErr)){ echo $erreurs->autersHuitTextErr; }  ?></span>
 
-					<input type="checkbox" id="reliequatre" name="reliequatre" <?php if  (isset($user['reliequatre'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="reliequatre" name="reliequatre" <?php if ($user['reliequatre'] == 1) $user['reliequatre'] = "checked"; echo $user['reliequatre'] ?>>
 					<label for="reliequatre">Relié au P/A</label>
 				</div>
 			</div>
@@ -615,78 +615,78 @@ $erreurs=json_decode($_GET['erreurs']);
 			<div class="soixantedixpourcent" >	
 
 				<div style="margin-top: 10px; margin-left: 10px; ">
-					<input type="checkbox" id="vpea" name="vpea" <?php if  (isset($user['vpea'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="vpea" name="vpea" <?php if ($user['vpea'] == 1) $user['vpea'] = "checked"; echo $user['vpea'] ?>>
 					<label for="vpea">Verrouillage par électro-aimant</label>
 				</div>
 
 				<div style="font-size: 15px; margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="panneauA" name="panneauA" <?php if  (isset($user['panneauA'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="panneauA" name="panneauA" <?php if ($user['panneauA'] == 1) $user['panneauA'] = "checked"; echo $user['panneauA'] ?>>
 					<label for="panneauA">panneau d'alarme</label>
 
-					<input type="checkbox" id="StationM" name="StationM" <?php if  (isset($user['StationM'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="StationM" name="StationM" <?php if ($user['StationM'] == 1) $user['StationM'] = "checked"; echo $user['StationM'] ?>>
 					<label for="StationM">Station Manuelle Bleue</label>
 
-					<input type="checkbox" id="detecteurD" name="detecteurD" <?php if  (isset($user['detecteurD'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="detecteurD" name="detecteurD" <?php if ($user['detecteurD'] == 1) $user['detecteurD'] = "checked"; echo $user['detecteurD'] ?>>
 					<label for="detecteurD">Détecteur de mouvement</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px; " >
-					<input type="checkbox" id="barreP" name="barreP" <?php if  (isset($user['barreP'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="barreP" name="barreP" <?php if ($user['barreP'] == 1) $user['barreP'] = "checked"; echo $user['barreP'] ?>>
 					<label for="barreP">Barre Panique</label>
 
-					<input type="checkbox" id="BoutonP" name="BoutonP" <?php if  (isset($user['BoutonP'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="BoutonP" name="BoutonP" <?php if ($user['BoutonP'] == 1) $user['BoutonP'] = "checked"; echo $user['BoutonP'] ?>>
 					<label for="BoutonP">Bouton-Poussoir</label>
 
-					<input type="checkbox" id="cle" name="cle" <?php if  (isset($user['cle'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="cle" name="cle" <?php if ($user['cle'] == 1) $user['cle'] = "checked"; echo $user['cle'] ?>>
 					<label for="cle">Clé</label>
 
-					<input type="checkbox" id="autresneuf" name="autresneuf" <?php if  (isset($user['autresneuf'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="autresneuf" name="autresneuf" <?php if ($user['autresneuf'] == 1) $user['autresneuf'] = "checked"; echo $user['autresneuf'] ?>>
 					<label for="autresneuf">Autre :</label>
 					<input style="width:20%;"type="text" id="autreneufText" name="autreneufText" value="<?php if(isset($user['autreneufText'])) { echo $user['autreneufText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->autreneufTextErr)){ echo $erreurs->autreneufTextErr; }  ?></span>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px; " >
-					<input type="checkbox" id="retenueM" name="retenueM" <?php if  (isset($user['retenueM'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="retenueM" name="retenueM" <?php if ($user['retenueM'] == 1) $user['retenueM'] = "checked"; echo $user['retenueM'] ?>>
 					<label for="retenueM">Retenue magnétique (porte coupe-feu)</label>
 
-					<input type="checkbox" id="rideau" name="rideau" <?php if  (isset($user['rideau'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="rideau" name="rideau" <?php if ($user['rideau'] == 1) $user['rideau'] = "checked"; echo $user['rideau'] ?>>
 					<label for="rideau">Rideau coupe-feu</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px; " >
-					<input type="checkbox" id="Systemed" name="Systemed" <?php if  (isset($user['Systemed'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="Systemed" name="Systemed" <?php if ($user['Systemed'] == 1) $user['Systemed'] = "checked"; echo $user['Systemed'] ?>>
 					<label for="Systemed">Système de désenfumage</label>
 
-					<input type="checkbox" id="parPA" name="parPA" <?php if  (isset($user['parPA'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="parPA" name="parPA" <?php if ($user['parPA'] == 1) $user['parPA'] = "checked"; echo $user['parPA'] ?>>
 					<label for="parPA">Par P/A</label>
 
-					<input type="checkbox" id="controle" name="controle" <?php if  (isset($user['controle'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="controle" name="controle" <?php if ($user['controle'] == 1) $user['controle'] = "checked"; echo $user['controle'] ?>>
 					<label for="controle">Contrôle</label>
 					<input style="width:20%;"type="text" id="controlText" name="controlText" value="<?php if(isset($user['controlText'])) { echo $user['controlText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->controlTextErr)){ echo $erreurs->controlTextErr; }  ?></span>
 				</div>
 
 				<div style="font-size: 15px; margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="spe" name="spe" <?php if  (isset($user['spe'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="spe" name="spe" <?php if ($user['spe'] == 1) $user['spe'] = "checked"; echo $user['spe'] ?>>
 					<label for="spe">Système pressurisation escalier</label>
 
-					<input type="checkbox" id="sss" name="sss" <?php if  (isset($user['sss'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="sss" name="sss" <?php if ($user['sss'] == 1) $user['sss'] = "checked"; echo $user['sss'] ?>>
 					<label for="sss">Sous-sol seulement</label>
 
-					<input type="checkbox" id="toutb" name="toutb" <?php if  (isset($user['toutb'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="toutb" name="toutb" <?php if ($user['toutb'] == 1) $user['toutb'] = "checked"; echo $user['toutb'] ?>>
 					<label for="toutb">Tout le Bâtiment</label>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="sdcc" name="sdcc" <?php if  (isset($user['sdcc'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="sdcc" name="sdcc" <?php if ($user['sdcc'] == 1) $user['sdcc'] = "checked"; echo $user['sdcc'] ?>>
 					<label for="sdcc">Système de caméra-Couverture</label>
 					<input style="width:50%;"type="text" id="sdccText" name="sdccText" value="<?php if(isset($user['sdccText'])) { echo $user['sdccText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->sdccTextErr)){ echo $erreurs->sdccTextErr; }  ?></span>
 				</div>
 
 				<div style="margin-top: 10px; margin-left: 10px;">
-					<input type="checkbox" id="sas" name="sas" <?php if  (isset($user['sas'] )) { echo "checked";} ?>>
+					<input type="checkbox" id="sas" name="sas" <?php if ($user['sas'] == 1) $user['sas'] = "checked"; echo $user['sas'] ?>>
 					<label for="sas">Si autres (spécifiez)</label>
 					<input style="width:55%;"type="text" id="sasText" name="sasText" value="<?php if(isset($user['sasText'])) { echo $user['sasText'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->sasTextErr)){ echo $erreurs->sasTextErr; }  ?></span>
@@ -694,7 +694,7 @@ $erreurs=json_decode($_GET['erreurs']);
 			</div>
 		</div>
 
-
+<!--
 		<div class="containerCent">
 				
 				<div class="trentepourcentPartTwo  trentepourcent">
@@ -946,7 +946,7 @@ $erreurs=json_decode($_GET['erreurs']);
 				<input type="checkbox" id="PanneaucontroleP" name="PanneaucontroleP" <?php if  (isset($user['PanneaucontroleP'] )) { echo "checked";} ?>>
 				<label for="PanneaucontroleP">Panneau de contrôle</label>
 			</div>
-		</div>  -->
+		</div>   -->
 
 
 		<div class="button containerCent" style="margin-top: 20px; " >
