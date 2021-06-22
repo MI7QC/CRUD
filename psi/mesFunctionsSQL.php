@@ -34,7 +34,12 @@ $sai, $saiMarque, $adressable, $zoneX, $unEtape, $deuxetape, $etp, $periode, $ph
 $rda,$adv,$pressE,$dea,$rdrm,$tac,$aaag,$autreS,
 $sdga,$eau,$air,$dssogs,$dtlb,$pompeAfeu,$pafeu,$ralg,$vds,$cageE,$autreShuitdeux,$autreShuit,$bid,$raccordP,$raccord,$extincteursp,$typeE,$sep,$efixe,$efixetext,$relieUn,
 $eGaz,$eGazText,$reliedeux,$preaction,$delugue,$delugueText,$relietrois,$autresectionhuit,$autersHuitText,$reliequatre,
-$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText)
+$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText,
+$uea,$udl,$generatrice,$modele,$amp,$exteroeir,$surtoit,$interieur,$interieurText,$diesel,$gazn,$essence,$Propane,
+$gaznaturel,$gazp,$autrereservoir,$autrereservoirtext,$planetage,$autreinfo,
+$paneauAlarmeP,$ExterieurP,$interieurP,$boutonsilenceP,$remiseP,$accusedeP,$PanneauP,$microP,$teleP,$zones,$systemeP,$vueP,$chaqueP,$vanneP,$vannedeP,$interrupteurP,$vanneetP,$pompeaP,$vuedP,
+$panneaudecP,$boutonetP,$systemesP,$bonbonneP,$declencheurP,$preactionP,$exterieurPhoto,$interieurPhoto,$generatriceP,$vuePhoto,$panneaudeP,$boutonarretP,$ups,$ascenseursP,$panneaurappelP,
+$boutonrappel,$panneauintP,$systemeappelP,$desenfumageP,$PanneaucontroleP)
 
 {
 	try {
@@ -47,7 +52,12 @@ $vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autrene
 		rda,adv,pressE,dea,rdrm,tac,aaag,autreS,
 		sdga,eau,air,dssogs,dtlb,pompeAfeu,pafeu,ralg,vds,cageE,autreShuitdeux,autreShuit,bid,raccordP,raccord,extincteursp,typeE,sep,efixe,efixetext,relieUn,
 		eGaz,eGazText,reliedeux,preaction,delugue,delugueText,relietrois,autresectionhuit,autersHuitText,reliequatre,
-		vpea,panneauA,StationM,detecteurD,barreP,BoutonP,cle,autresneuf,autreneufText,retenueM,rideau,Systemed,parPA,controle,controlText,spe,sss,toutb,sdcc,sdccText,sas,sasText) 
+		vpea,panneauA,StationM,detecteurD,barreP,BoutonP,cle,autresneuf,autreneufText,retenueM,rideau,Systemed,parPA,controle,controlText,spe,sss,toutb,sdcc,sdccText,sas,sasText,
+		uea,udl,generatrice,modele,amp,exteroeir,surtoit,interieur,interieurText,diesel,gazn,essence,Propane,
+		gaznaturel,gazp,autrereservoir,autrereservoirtext,planetage,autreinfo,
+		paneauAlarmeP,ExterieurP,interieurP,boutonsilenceP,remiseP,accusedeP,PanneauP,microP,teleP,zones,systemeP,vueP,chaqueP,vanneP,vannedeP,interrupteurP,vanneetP,pompeaP,vuedP,
+		panneaudecP,boutonetP,systemesP,bonbonneP,declencheurP,preactionP,exterieurPhoto,interieurPhoto,generatriceP,vuePhoto,panneaudeP,boutonarretP,ups,ascenseursP,panneaurappelP,
+		boutonrappel,panneauintP,systemeappelP,desenfumageP,PanneaucontroleP)
 					VALUES ('$nomADB', '$coordonnateur', '$telJour' ,'$telSoir','$nomADP','$responsable','$tel','$courriel',
 					'$principale','$autre','$nombreDeSousSol','$NombreDetage','$nombreDappentis','$nombreDeGrenier','$ascenseurNombre','$monteChargeNombre','$communicationDansAscendeur','$rappelAutomatique','$rappelManuel','$ascenseurPompier','$nombreDeCageDescalierDeSecours',
 					'$nbreDappartements', '$pJour', '$pSoir', '$pNuit', '$pFDS', '$oJour','$oSoir', '$oNuit', '$oFDS', '$rJour', '$rSoir', '$rNuit', '$rFDS', '$paba',
@@ -56,7 +66,12 @@ $vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autrene
 					'$rda','$adv','$pressE','$dea','$rdrm','$tac','$aaag','$autreS',
 					'$sdga','$eau','$air','$dssogs','$dtlb','$pompeAfeu','$pafeu','$ralg','$vds','$cageE','$autreShuitdeux','$autreShuit','$bid','$raccordP','$raccord','$extincteursp','$typeE','$efixe','$sep','$efixetext','$relieUn',
 					'$eGaz','$eGazText','$reliedeux','$preaction','$delugue','$delugueText','$relietrois','$autresectionhuit','$autersHuitText','$reliequatre',
-					'$vpea','$panneauA','$StationM','$detecteurD','$barreP','$BoutonP','$cle','$autresneuf','$autreneufText','$retenueM','$rideau','$Systemed','$parPA','$controle','$controlText','$spe','$sss','$toutb','$sdcc','$sdccText','$sas','$sasText')";
+					'$vpea','$panneauA','$StationM','$detecteurD','$barreP','$BoutonP','$cle','$autresneuf','$autreneufText','$retenueM','$rideau','$Systemed','$parPA','$controle','$controlText','$spe','$sss','$toutb','$sdcc','$sdccText','$sas','$sasText',
+					'$uea','$udl','$generatrice','$modele','$amp','$exteroeir','$surtoit','$interieur','$interieurText','$diesel','$gazn','$essence','$Propane',
+					'$gaznaturel','$gazp','$autrereservoir','$autrereservoirtext','$planetage','$autreinfo',
+					'$paneauAlarmeP','$ExterieurP','$interieurP','$boutonsilenceP','$remiseP','$accusedeP','$PanneauP','$microP','$teleP','$zones','$systemeP','$vueP','$chaqueP','$vanneP','$vannedeP','$interrupteurP','$vanneetP','$pompeaP','$vuedP',
+					'$panneaudecP','$boutonetP','$systemesP','$bonbonneP','$declencheurP','$preactionP','$exterieurPhoto','$interieurPhoto','$generatriceP','$vuePhoto','$panneaudeP','$boutonarretP','$ups','$ascenseursP','$panneaurappelP',
+					'$boutonrappel','$panneauintP','$systemeappelP','$desenfumageP','$PanneaucontroleP')";
 		$con->exec($sql);
 	} catch (PDOException $e) {
 		echo $sql . "<br>" . $e->getMessage();
@@ -84,7 +99,12 @@ $sai, $saiMarque, $adressable, $zoneX, $unEtape, $deuxetape, $etp, $periode, $ph
 $rda,$adv,$pressE,$dea,$rdrm,$tac,$aaag,$autreS,
 $sdga,$eau,$air,$dssogs,$dtlb,$pompeAfeu,$pafeu,$ralg,$vds,$cageE,$autreShuitdeux,$autreShuit,$bid,$raccordP,$raccord,$extincteursp,$typeE,$sep,$efixe,$efixetext,$relieUn,
 $eGaz,$eGazText,$reliedeux,$preaction,$delugue,$delugueText,$relietrois,$autresectionhuit,$autersHuitText,$reliequatre,
-$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText)
+$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText,
+$uea,$udl,$generatrice,$modele,$amp,$exteroeir,$surtoit,$interieur,$interieurText,$diesel,$gazn,$essence,$Propane,
+$gaznaturel,$gazp,$autrereservoir,$autrereservoirtext,$planetage,$autreinfo,
+$paneauAlarmeP,$ExterieurP,$interieurP,$boutonsilenceP,$remiseP,$accusedeP,$PanneauP,$microP,$teleP,$zones,$systemeP,$vueP,$chaqueP,$vanneP,$vannedeP,$interrupteurP,$vanneetP,$pompeaP,$vuedP,
+$panneaudecP,$boutonetP,$systemesP,$bonbonneP,$declencheurP,$preactionP,$exterieurPhoto,$interieurPhoto,$generatriceP,$vuePhoto,$panneaudeP,$boutonarretP,$ups,$ascenseursP,$panneaurappelP,
+$boutonrappel,$panneauintP,$systemeappelP,$desenfumageP,$PanneaucontroleP)
 {
 	try {
 		$con = getDatabaseConnexion();
@@ -223,7 +243,65 @@ $vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autrene
 						sdcc = '$sdcc',
 						sdccText = '$sdccText',
 						sas = '$sas',
-						sasText = '$sasText'
+						sasText = '$sasText',
+						uea = '$uea',
+						udl = '$udl',
+						generatrice = '$generatrice',
+						modele = '$modele',
+						amp = '$amp',
+						exteroeir = '$exteroeir',
+						surtoit = '$surtoit',
+						interieur = '$interieur',
+						interieurText = '$interieurText',
+						diesel = '$diesel',
+						gazn = '$gazn',
+						essence = '$essence',
+						Propane = '$Propane',
+						gaznaturel = '$gaznaturel',
+						gazp = '$gazp',
+						autrereservoir = '$autrereservoir',
+						autrereservoirtext = '$autrereservoirtext',
+						planetage = '$planetage',
+						autreinfo = '$autreinfo',
+						paneauAlarmeP = '$paneauAlarmeP',
+						ExterieurP = '$ExterieurP',
+						interieurP = '$interieurP',
+						boutonsilenceP = '$boutonsilenceP',
+						remiseP = '$remiseP',
+						accusedeP = '$accusedeP',
+						PanneauP = '$PanneauP',
+						microP = '$microP',
+						teleP = '$teleP',
+						zones = '$zones',
+						systemeP = '$systemeP',
+						vueP = '$vueP',
+						chaqueP = '$chaqueP',
+						vanneP = '$vanneP',
+						vannedeP = '$vannedeP',
+						interrupteurP = '$interrupteurP',
+						vanneetP = '$vanneetP',
+						pompeaP = '$pompeaP',
+						vuedP = '$vuedP',
+						panneaudecP = '$panneaudecP',
+						boutonetP = '$boutonetP',
+						systemesP = '$systemesP',
+						bonbonneP = '$bonbonneP',
+						declencheurP = '$declencheurP',
+						preactionP = '$preactionP',
+						exterieurPhoto = '$exterieurPhoto',
+						interieurPhoto = '$interieurPhoto',
+						generatriceP = '$generatriceP',
+						vuePhoto = '$vuePhoto',
+						panneaudeP = '$panneaudeP',
+						boutonarretP = '$boutonarretP',
+						ups = '$ups',
+						ascenseursP = '$ascenseursP',
+						panneaurappelP = '$panneaurappelP',
+						boutonrappel = '$boutonrappel',
+						panneauintP = '$panneauintP',
+						systemeappelP = '$systemeappelP',
+						desenfumageP = '$desenfumageP',
+						PanneaucontroleP = '$PanneaucontroleP'
 						where idPsi = '$id' ";
 		$stmt = $con->query($requete);
 	} catch (PDOException $e) {

@@ -153,8 +153,68 @@ if ($action == "DELETE") {
 	$sasText = $_POST["sasText"];
 
 
-	
+	if (isset($_POST["uea"]) == NULL) { $uea = 0; } else { $uea = 1;};
+	if (isset($_POST["udl"]) == NULL) { $udl = 0; } else { $udl = 1;};
+	if (isset($_POST["generatrice"]) == NULL) { $generatrice = 0; } else { $generatrice = 1;};
+	$modele = $_POST["modele"];
+	$amp = $_POST["amp"];
+	if (isset($_POST["exteroeir"]) == NULL) { $exteroeir = 0; } else { $exteroeir = 1;};
+	if (isset($_POST["surtoit"]) == NULL) { $surtoit = 0; } else { $surtoit = 1;};
+	if (isset($_POST["interieur"]) == NULL) { $interieur = 0; } else { $interieur = 1;};
+	$interieurText = $_POST["interieurText"];
+	if (isset($_POST["diesel"]) == NULL) { $diesel = 0; } else { $diesel = 1;};
+	if (isset($_POST["gazn"]) == NULL) { $gazn = 0; } else { $gazn = 1;};
+	if (isset($_POST["essence"]) == NULL) { $essence = 0; } else { $essence = 1;};
+	if (isset($_POST["Propane"]) == NULL) { $Propane = 0; } else { $Propane = 1;};
 
+
+	if (isset($_POST["gaznaturel"]) == NULL) { $gaznaturel = 0; } else { $gaznaturel = 1;};
+	if (isset($_POST["gazp"]) == NULL) { $gazp = 0; } else { $gazp = 1;};
+	if (isset($_POST["autrereservoir"]) == NULL) { $autrereservoir = 0; } else { $autrereservoir = 1;};
+	$autrereservoirtext = $_POST["autrereservoirtext"];
+	if (isset($_POST["planetage"]) == NULL) { $planetage = 0; } else { $planetage = 1;};
+
+	$autreinfo = $_POST["autreinfo"];
+
+	if (isset($_POST["paneauAlarmeP"]) == NULL) { $paneauAlarmeP = 0; } else { $paneauAlarmeP = 1;};
+	if (isset($_POST["ExterieurP"]) == NULL) { $ExterieurP = 0; } else { $ExterieurP = 1;};
+	if (isset($_POST["interieurP"]) == NULL) { $interieurP = 0; } else { $interieurP = 1;};
+	if (isset($_POST["boutonsilenceP"]) == NULL) { $boutonsilenceP = 0; } else { $boutonsilenceP = 1;};
+	if (isset($_POST["remiseP"]) == NULL) { $remiseP = 0; } else { $remiseP = 1;};
+	if (isset($_POST["accusedeP"]) == NULL) { $accusedeP = 0; } else { $accusedeP = 1;};
+	if (isset($_POST["PanneauP"]) == NULL) { $PanneauP = 0; } else { $PanneauP = 1;};
+	if (isset($_POST["microP"]) == NULL) { $microP = 0; } else { $microP = 1;};
+	if (isset($_POST["teleP"]) == NULL) { $teleP = 0; } else { $teleP = 1;};
+	if (isset($_POST["zones"]) == NULL) { $zones = 0; } else { $zones = 1;};
+	if (isset($_POST["systemeP"]) == NULL) { $systemeP = 0; } else { $systemeP = 1;};
+	if (isset($_POST["vueP"]) == NULL) { $vueP = 0; } else { $vueP = 1;};
+	if (isset($_POST["chaqueP"]) == NULL) { $chaqueP = 0; } else { $chaqueP = 1;};
+	if (isset($_POST["vanneP"]) == NULL) { $vanneP = 0; } else { $vanneP = 1;};
+	if (isset($_POST["vannedeP"]) == NULL) { $vannedeP = 0; } else { $vannedeP = 1;};
+	if (isset($_POST["interrupteurP"]) == NULL) { $interrupteurP = 0; } else { $interrupteurP = 1;};
+	if (isset($_POST["vanneetP"]) == NULL) { $vanneetP = 0; } else { $vanneetP = 1;};
+	if (isset($_POST["pompeaP"]) == NULL) { $pompeaP = 0; } else { $pompeaP = 1;};
+	if (isset($_POST["vuedP"]) == NULL) { $vuedP = 0; } else { $vuedP = 1;};
+	if (isset($_POST["panneaudecP"]) == NULL) { $panneaudecP = 0; } else { $panneaudecP = 1;};
+	if (isset($_POST["boutonetP"]) == NULL) { $boutonetP = 0; } else { $boutonetP = 1;};
+	if (isset($_POST["systemesP"]) == NULL) { $systemesP = 0; } else { $systemesP = 1;};
+	if (isset($_POST["bonbonneP"]) == NULL) { $bonbonneP = 0; } else { $bonbonneP = 1;};
+	if (isset($_POST["declencheurP"]) == NULL) { $declencheurP = 0; } else { $declencheurP = 1;};
+	if (isset($_POST["preactionP"]) == NULL) { $preactionP = 0; } else { $preactionP = 1;};
+	if (isset($_POST["exterieurPhoto"]) == NULL) { $exterieurPhoto = 0; } else { $exterieurPhoto = 1;};
+	if (isset($_POST["interieurPhoto"]) == NULL) { $interieurPhoto = 0; } else { $interieurPhoto = 1;};
+	if (isset($_POST["generatriceP"]) == NULL) { $generatriceP = 0; } else { $generatriceP = 1;};
+	if (isset($_POST["vuePhoto"]) == NULL) { $vuePhoto = 0; } else { $vuePhoto = 1;};
+	if (isset($_POST["panneaudeP"]) == NULL) { $panneaudeP = 0; } else { $panneaudeP = 1;};
+	if (isset($_POST["boutonarretP"]) == NULL) { $boutonarretP = 0; } else { $boutonarretP = 1;};
+	if (isset($_POST["ups"]) == NULL) { $ups = 0; } else { $ups = 1;};
+	if (isset($_POST["ascenseursP"]) == NULL) { $ascenseursP = 0; } else { $ascenseursP = 1;};
+	if (isset($_POST["panneaurappelP"]) == NULL) { $panneaurappelP = 0; } else { $panneaurappelP = 1;};
+	if (isset($_POST["boutonrappel"]) == NULL) { $boutonrappel = 0; } else { $boutonrappel = 1;};
+	if (isset($_POST["panneauintP"]) == NULL) { $panneauintP = 0; } else { $panneauintP = 1;};
+	if (isset($_POST["systemeappelP"]) == NULL) { $systemeappelP = 0; } else { $systemeappelP = 1;};
+	if (isset($_POST["desenfumageP"]) == NULL) { $desenfumageP = 0; } else { $desenfumageP = 1;};
+	if (isset($_POST["PanneaucontroleP"]) == NULL) { $PanneaucontroleP = 0; } else { $PanneaucontroleP = 1;};
 }
 
 
@@ -172,7 +232,12 @@ if ($action == "CREATE") {
 	$rda,$adv,$pressE,$dea,$rdrm,$tac,$aaag,$autreS,
 	$sdga,$eau,$air,$dssogs,$dtlb,$pompeAfeu,$pafeu,$ralg,$vds,$cageE,$autreShuitdeux,$autreShuit,$bid,$raccordP,$raccord,$extincteursp,$typeE,$sep,$efixe,$efixetext,$relieUn,
 	$eGaz,$eGazText,$reliedeux,$preaction,$delugue,$delugueText,$relietrois,$autresectionhuit,$autersHuitText,$reliequatre,
-	$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText);
+	$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText,
+	$uea,$udl,$generatrice,$modele,$amp,$exteroeir,$surtoit,$interieur,$interieurText,$diesel,$gazn,$essence,$Propane,
+	$gaznaturel,$gazp,$autrereservoir,$autrereservoirtext,$planetage,$autreinfo,
+    $paneauAlarmeP,$ExterieurP,$interieurP,$boutonsilenceP,$remiseP,$accusedeP,$PanneauP,$microP,$teleP,$zones,$systemeP,$vueP,$chaqueP,$vanneP,$vannedeP,$interrupteurP,$vanneetP,$pompeaP,$vuedP,
+	$panneaudecP,$boutonetP,$systemesP,$bonbonneP,$declencheurP,$preactionP,$exterieurPhoto,$interieurPhoto,$generatriceP,$vuePhoto,$panneaudeP,$boutonarretP,$ups,$ascenseursP,$panneaurappelP,
+	$boutonrappel,$panneauintP,$systemeappelP,$desenfumageP,$PanneaucontroleP);
 	header("location:listPSI.php?message=User Created Successfully...!");
 	exit;
 }
@@ -190,7 +255,12 @@ if ($action == "UPDATE") {
 	 $rda,$adv,$pressE,$dea,$rdrm,$tac,$aaag,$autreS,
 	 $sdga,$eau,$air,$dssogs,$dtlb,$pompeAfeu,$pafeu,$ralg,$vds,$cageE,$autreShuitdeux,$autreShuit,$bid,$raccordP,$raccord,$extincteursp,$typeE,$sep,$efixe,$efixetext,$relieUn,
 	 $eGaz,$eGazText,$reliedeux,$preaction,$delugue,$delugueText,$relietrois,$autresectionhuit,$autersHuitText,$reliequatre,
-	 $vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText);
+	 $vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText,
+	 $uea,$udl,$generatrice,$modele,$amp,$exteroeir,$surtoit,$interieur,$interieurText,$diesel,$gazn,$essence,$Propane,
+	 $gaznaturel,$gazp,$autrereservoir,$autrereservoirtext,$planetage,$autreinfo,
+	 $paneauAlarmeP,$ExterieurP,$interieurP,$boutonsilenceP,$remiseP,$accusedeP,$PanneauP,$microP,$teleP,$zones,$systemeP,$vueP,$chaqueP,$vanneP,$vannedeP,$interrupteurP,$vanneetP,$pompeaP,$vuedP,
+     $panneaudecP,$boutonetP,$systemesP,$bonbonneP,$declencheurP,$preactionP,$exterieurPhoto,$interieurPhoto,$generatriceP,$vuePhoto,$panneaudeP,$boutonarretP,$ups,$ascenseursP,$panneaurappelP,
+	 $boutonrappel,$panneauintP,$systemeappelP,$desenfumageP,$PanneaucontroleP);
 	header("location:listPSI.php?message=User Updated Successfully...!");
 	exit;
 }
