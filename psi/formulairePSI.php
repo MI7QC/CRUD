@@ -405,11 +405,11 @@ $erreurs=json_decode($_GET['erreurs']);
 				
 				<div style="margin-top: 10px; margin-left: 10px; " >
 					<label for="sideuxetape">Si Deux Étapes :</label>
-					<label for="etp">En Tout Temps </label>
 					<input type="checkbox" id="etp" name="etp" <?php if ($user['etp'] == 1) $user['etp'] = "checked"; echo $user['etp'] ?>>
+					<label for="etp">En Tout Temps </label>
 
-					<label for="periode">Période (hres) :</label>
 					<input type="checkbox" id="periode" name="periode" <?php if ($user['periode'] == 1) $user['periode'] = "checked"; echo $user['periode'] ?>>
+					<label for="periode">Période (hres) </label>
 					<input style="width: 20%" type="text" id="pheure" name="pheure" value="<?php if(isset($user['pheure'])) { echo $user['pheure'];  }?>" >
 					<span class="error"> <?php if(isset($erreurs->pheureErr)){ echo $erreurs->pheureErr; }  ?></span>
 				</div>

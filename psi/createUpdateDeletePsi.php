@@ -220,7 +220,7 @@ if ($action == "DELETE") {
 
 
 if ($action == "CREATE") {
-	// validate_fields();
+	validate_fields();
 
 	createUser($nomADB, $coordonnateur, $telJour, $telSoir, $nomADP, $responsable, $tel, $courriel,
 	$principale, $autre, $nombreDeSousSol, $NombreDetage, $nombreDappentis, $nombreDeGrenier, $ascenseurNombre, $monteChargeNombre,
@@ -417,6 +417,373 @@ function validate_fields()
 		$erreurs['nombreDeCageDescalierDeSecoursErr'] = "Only letters, Numbers and white space allowed";
 	}
 
+	// validation du champ nbreDappartements si conforme au preg_match
+	if (!empty($_POST["nbreDappartements"]) && !preg_match('/^[a-z0-9 .\-]+$/i', $_POST['nbreDappartements'])) {
+		$flag = true;
+		$erreurs['nbreDappartementsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ pJour si conforme au preg_match
+	if (!empty($_POST["pJour"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['pJour'])) {
+		$flag = true;
+		$erreurs['pJourErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ pSoir si conforme au preg_match
+	if (!empty($_POST["pSoir"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['pSoir'])) {
+		$flag = true;
+		$erreurs['pSoirErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ pNuit si conforme au preg_match
+	if (!empty($_POST["pNuit"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['pNuit'])) {
+		$flag = true;
+		$erreurs['pNuitErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ pFDS si conforme au preg_match
+	if (!empty($_POST["pFDS"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['pFDS'])) {
+		$flag = true;
+		$erreurs['pFDSErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ oJour si conforme au preg_match
+	if (!empty($_POST["oJour"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['oJour'])) {
+		$flag = true;
+		$erreurs['oJourErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ oSoir si conforme au preg_match
+	if (!empty($_POST["oSoir"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['oSoir'])) {
+		$flag = true;
+		$erreurs['oSoirErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ oNuit si conforme au preg_match
+	if (!empty($_POST["oNuit"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['oNuit'])) {
+		$flag = true;
+		$erreurs['oNuitErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ oFDS si conforme au preg_match
+	if (!empty($_POST["oFDS"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['oFDS'])) {
+		$flag = true;
+		$erreurs['oFDSErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ rJour si conforme au preg_match
+	if (!empty($_POST["rJour"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['rJour'])) {
+		$flag = true;
+		$erreurs['rJourErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ rSoir si conforme au preg_match
+	if (!empty($_POST["rSoir"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['rSoir'])) {
+		$flag = true;
+		$erreurs['rSoirErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ rNuit si conforme au preg_match
+	if (!empty($_POST["rNuit"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['rNuit'])) {
+		$flag = true;
+		$erreurs['rNuitErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ rFDS si conforme au preg_match
+	if (!empty($_POST["rFDS"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['rFDS'])) {
+		$flag = true;
+		$erreurs['rFDSErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ paba si conforme au preg_match
+	if (!empty($_POST["paba"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['paba'])) {
+		$flag = true;
+		$erreurs['pabaErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ cinema si conforme au preg_match
+	if (!empty($_POST["cinema"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['cinema'])) {
+		$flag = true;
+		$erreurs['cinemaErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ bars si conforme au preg_match
+	if (!empty($_POST["bars"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['bars'])) {
+		$flag = true;
+		$erreurs['barsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ ecole si conforme au preg_match
+	if (!empty($_POST["ecole"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['ecole'])) {
+		$flag = true;
+		$erreurs['ecoleErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ expositions si conforme au preg_match
+	if (!empty($_POST["expositions"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['expositions'])) {
+		$flag = true;
+		$erreurs['expositionsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ restaurants si conforme au preg_match
+	if (!empty($_POST["restaurants"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['restaurants'])) {
+		$flag = true;
+		$erreurs['restaurantsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ prison si conforme au preg_match
+	if (!empty($_POST["prison"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['prison'])) {
+		$flag = true;
+		$erreurs['prisonErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ hopital si conforme au preg_match
+	if (!empty($_POST["hopital"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['hopital'])) {
+		$flag = true;
+		$erreurs['hopitalErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ clinique si conforme au preg_match
+	if (!empty($_POST["clinique"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['clinique'])) {
+		$flag = true;
+		$erreurs['cliniqueErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ chsld si conforme au preg_match
+	if (!empty($_POST["chsld"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['chsld'])) {
+		$flag = true;
+		$erreurs['chsldErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ appartements si conforme au preg_match
+	if (!empty($_POST["appartements"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['appartements'])) {
+		$flag = true;
+		$erreurs['appartementsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ hotel si conforme au preg_match
+	if (!empty($_POST["hotel"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['hotel'])) {
+		$flag = true;
+		$erreurs['hotelErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ accueil si conforme au preg_match
+	if (!empty($_POST["accueil"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['accueil'])) {
+		$flag = true;
+		$erreurs['accueilErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ hebergements si conforme au preg_match
+	if (!empty($_POST["hebergements"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['hebergements'])) {
+		$flag = true;
+		$erreurs['hebergementsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ bureaux si conforme au preg_match
+	if (!empty($_POST["bureaux"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['bureaux'])) {
+		$flag = true;
+		$erreurs['bureauxErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ cabinets si conforme au preg_match
+	if (!empty($_POST["cabinets"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['cabinets'])) {
+		$flag = true;
+		$erreurs['cabinetsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ magasins si conforme au preg_match
+	if (!empty($_POST["magasins"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['magasins'])) {
+		$flag = true;
+		$erreurs['magasinsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ detaillants si conforme au preg_match
+	if (!empty($_POST["detaillants"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['detaillants'])) {
+		$flag = true;
+		$erreurs['detaillantsErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ commerce si conforme au preg_match
+	if (!empty($_POST["commerce"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['commerce'])) {
+		$flag = true;
+		$erreurs['commerceErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ ateliers si conforme au preg_match
+	if (!empty($_POST["ateliers"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['ateliers'])) {
+		$flag = true;
+		$erreurs['ateliersErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ entrepot si conforme au preg_match
+	if (!empty($_POST["entrepot"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['entrepot'])) {
+		$flag = true;
+		$erreurs['entrepotErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ usine si conforme au preg_match
+	if (!empty($_POST["usine"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['usine'])) {
+		$flag = true;
+		$erreurs['usineErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ stationnement si conforme au preg_match
+	if (!empty($_POST["stationnement"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['stationnement'])) {
+		$flag = true;
+		$erreurs['stationnementErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ specifiez si conforme au preg_match
+	if (!empty($_POST["specifiez"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['specifiez'])) {
+		$flag = true;
+		$erreurs['specifiezErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ saiMarque si conforme au preg_match
+	if (!empty($_POST["saiMarque"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['saiMarque'])) {
+		$flag = true;
+		$erreurs['saiMarqueErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ pheure si conforme au preg_match
+	if (!empty($_POST["pheure"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['pheure'])) {
+		$flag = true;
+		$erreurs['pheureErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ panneauS si conforme au preg_match
+	if (!empty($_POST["panneauS"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['panneauS'])) {
+		$flag = true;
+		$erreurs['panneauSErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ textannonciateur si conforme au preg_match
+	if (!empty($_POST["textannonciateur"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['textannonciateur'])) {
+		$flag = true;
+		$erreurs['textannonciateurErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ racNomTel si conforme au preg_match
+	if (!empty($_POST["racNomTel"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['racNomTel'])) {
+		$flag = true;
+		$erreurs['racNomTelErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ scuMarque si conforme au preg_match
+	if (!empty($_POST["scuMarque"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['scuMarque'])) {
+		$flag = true;
+		$erreurs['scuMarqueErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ autreS si conforme au preg_match
+	if (!empty($_POST["autreS"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['autreS'])) {
+		$flag = true;
+		$erreurs['autreSErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+
+	// validation du champ pafeu si conforme au preg_match
+	if (!empty($_POST["pafeu"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['pafeu'])) {
+		$flag = true;
+		$erreurs['pafeuErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ autreShuit si conforme au preg_match
+	if (!empty($_POST["autreShuit"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['autreShuit'])) {
+		$flag = true;
+		$erreurs['autreShuitErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ raccord si conforme au preg_match
+	if (!empty($_POST["raccord"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['raccord'])) {
+		$flag = true;
+		$erreurs['raccordErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ typeE si conforme au preg_match
+	if (!empty($_POST["typeE"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['typeE'])) {
+		$flag = true;
+		$erreurs['typeEErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ efixetext si conforme au preg_match
+	if (!empty($_POST["efixetext"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['efixetext'])) {
+		$flag = true;
+		$erreurs['efixetextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ eGazText si conforme au preg_match
+	if (!empty($_POST["eGazText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['eGazText'])) {
+		$flag = true;
+		$erreurs['eGazTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ delugueText si conforme au preg_match
+	if (!empty($_POST["delugueText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['delugueText'])) {
+		$flag = true;
+		$erreurs['delugueTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ autersHuitText si conforme au preg_match
+	if (!empty($_POST["autersHuitText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['autersHuitText'])) {
+		$flag = true;
+		$erreurs['autersHuitTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ autreneufText si conforme au preg_match
+	if (!empty($_POST["autreneufText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['autreneufText'])) {
+		$flag = true;
+		$erreurs['autreneufTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ controlText si conforme au preg_match
+	if (!empty($_POST["controlText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['controlText'])) {
+		$flag = true;
+		$erreurs['controlTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ sdccText si conforme au preg_match
+	if (!empty($_POST["sdccText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['sdccText'])) {
+		$flag = true;
+		$erreurs['sdccTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ sasText si conforme au preg_match
+	if (!empty($_POST["sasText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['sasText'])) {
+		$flag = true;
+		$erreurs['sasTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ modele si conforme au preg_match
+	if (!empty($_POST["modele"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['modele'])) {
+		$flag = true;
+		$erreurs['modeleErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ amp si conforme au preg_match
+	if (!empty($_POST["amp"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['amp'])) {
+		$flag = true;
+		$erreurs['ampErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ interieurText si conforme au preg_match
+	if (!empty($_POST["interieurText"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['interieurText'])) {
+		$flag = true;
+		$erreurs['interieurTextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ autrereservoirtext si conforme au preg_match
+	if (!empty($_POST["autrereservoirtext"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['autrereservoirtext'])) {
+		$flag = true;
+		$erreurs['autrereservoirtextErr'] = "Only letters, Numbers and white space allowed";
+	}
+
+	// validation du champ autreinfo si conforme au preg_match
+	if (!empty($_POST["autreinfo"]) && !preg_match('/^[a-z0-9 .:\-]+$/i', $_POST['autreinfo'])) {
+		$flag = true;
+		$erreurs['autreinfoErr'] = "Only letters, Numbers and white space allowed";
+	}
+	
 
 	if ($flag == true) {
 
