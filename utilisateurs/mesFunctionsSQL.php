@@ -16,10 +16,13 @@ function getDatabaseConnexion()
 
 
 // récupere tous les users
-function getAllUsers()
+function getAllUsers($rechercher = "")
 {
+	$rechercher = "%" . $rechercher . "%";
+
 	$con = getDatabaseConnexion();
-	$requete = 'SELECT * from utilisateurs';
+	$requete = "SELECT * FROM utilisateurs WHERE (nom LIKE '$rechercher')";
+
 	$rows = $con->query($requete);
 	return $rows;
 }
