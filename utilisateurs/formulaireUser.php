@@ -2,8 +2,10 @@
 include 'mesFunctionsSQL.php';
 include 'afficherUser.php';
 
+//Verification de l'id dans le URL si vide ou remplis
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 
+//si le ID recupérer est egal à 0 l'action sera de créer un User Sinon mise a jours
 if ($id==0) {
 	$user = getNewUser();
 	$action = "CREATE";
@@ -14,6 +16,7 @@ if ($id==0) {
 	$libelle = "Mettre a jour";
 }
 
+//Affiche tout les erreurs dans le form
 if (isset($_GET['erreurs']) ){
 $erreurs=json_decode($_GET['erreurs']);
 }
@@ -21,7 +24,7 @@ $erreurs=json_decode($_GET['erreurs']);
 
 <html>
 <header>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../styles/formulaireUser.css">
 </header>
 
 <body>
@@ -65,6 +68,7 @@ $erreurs=json_decode($_GET['erreurs']);
 
 	<br>
 
+	<!-- si l'id recupérer n'est pas egal a 0 l'option Supprimer sera afficher -->
 	<?php if ($action != "CREATE") { ?>
 		<form action="createUpdateDeleteUser.php" method="post">
 			<input type="hidden" name="action" value="DELETE" />

@@ -1,5 +1,5 @@
 <?php
-
+//connection a la BDD
 function getDatabaseConnexion()
 {
 	try {
@@ -15,7 +15,7 @@ function getDatabaseConnexion()
 }
 
 
-// récupere tous les users
+// récupere tous les users ou recherche nom ou prenom
 function getAllUsers($rechercher = "")
 {
 	$rechercher = "%" . $rechercher . "%";

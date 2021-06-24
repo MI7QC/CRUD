@@ -1,6 +1,6 @@
 <?php
 include 'mesFunctionsSQL.php';
-include 'afficherUser.php';
+include 'afficherPsi.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 

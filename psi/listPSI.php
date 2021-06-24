@@ -1,29 +1,32 @@
+<?php
+    include 'mesFunctionsSQL.php';
+    include 'afficherPsi.php';
+
+    $recherche = isset($_POST['recherche']) ? trim($_POST['recherche']) : "";
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>CRUD PHP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/mainPage.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="container-full-width">
-        <!-- <a href=formulairePSI.php?id=0><img src='../images/woman-man-80.png'></a> -->
-    </div>
-    <div class="container-full-width">
-        <?php if (isset($_GET['message'])) {
-        ?>
+        <?php if (isset($_GET['message'])) { ?>
             <span class="message"><?php echo $_GET['message']; ?></span>
-        <?php
-        } ?>
+        <?php } ?>
     </div>
 
     <?php
-    include 'mesFunctionsSQL.php';
-    include 'afficherUser.php';
-
+    //menu navpsi
+    navpsi();
+    //recupere et affiche le header du tableau
     $headers = getHeaderTable();
-    $psi = getAllPSI();
+    $psi = getAllPSI($recherche);
     afficherTableau($psi, $headers);
     ?>
 

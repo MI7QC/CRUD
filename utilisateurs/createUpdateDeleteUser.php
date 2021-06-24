@@ -1,6 +1,8 @@
 <?php
 include 'mesFunctionsSQL.php';
 include 'afficherUser.php';
+//recupération des données du form
+// quel type d'action sera choisi
 $action = $_POST["action"];
 
 
@@ -94,7 +96,7 @@ function validate_fields()
 		$flag = true;
 		$erreurs['adresseErr'] = "Only number allowed";
 	}
-
+	//si un des champ est egale a true retour une erreur dans le champ.
 	if ($flag == true) {
 
 		header("location:formulaireUser.php?&id=$id&erreurs=" . json_encode($erreurs));

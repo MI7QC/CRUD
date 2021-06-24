@@ -1,7 +1,7 @@
 <?php
 
 
-
+//Affiche le contenu du tablea recuperation des données user
 function afficherTableau($users, $headers)
 {
 ?>
@@ -31,9 +31,9 @@ function afficherTableau($users, $headers)
 		</tbody>
 	</table>
 <?php
-
 }
 
+//Affiche le header du tableau
 function getHeaderTable()
 {
 	$headers = array();
@@ -51,6 +51,26 @@ function getHeaderTable()
 
 	return $headers;
 }
-
-
 ?>
+
+
+<?php
+
+//Affiche le menu User
+function navuser()
+{
+$recherche = isset($_POST['recherche']) ? trim($_POST['recherche']) : "";
+?>
+
+	<div class="topnav">
+        <a class="active" href="../index.php">Home</a>
+        <a href=formulaireUser.php?id=0>Ajouter Utilisateur</a>
+        <div class="search-container">
+            <form action="" method="post">
+            <input type="text" placeholder="Search.." name="recherche" value="<?= $recherche ?>">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+<?php
+}

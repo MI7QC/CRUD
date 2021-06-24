@@ -16,10 +16,14 @@ function getDatabaseConnexion()
 
 
 // récupere tous les users
-function getAllPSI()
+function getAllPSI($rechercher = "")
 {
+	$rechercher = "%" . $rechercher . "%";
+
 	$con = getDatabaseConnexion();
-	$requete = 'SELECT * from psi';
+	$requete = "SELECT * FROM psi WHERE coordonnateur LIKE '$rechercher' OR nomADB LIKE '$rechercher' OR courriel LIKE '$rechercher'";
+	// print_r($requete);
+	// die();
 	$rows = $con->query($requete);
 	return $rows;
 }

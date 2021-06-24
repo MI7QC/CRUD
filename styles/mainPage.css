@@ -1,18 +1,4 @@
-/*DÉBUT SECTION : FORM CREATION UTILISATION formulairePSI.PHP*/
-form {
-  /* Uniquement centrer le formulaire sur la page */
-  margin: 0 auto;
-  width: 1080px;
-  /* Encadré pour voir les limites du formulaire */
-  padding: 1em;
-  border: 1px solid #ccc;
-  border-radius: 1em;
-}
-
-form div + div {
-  margin-top: 1em;
-}
-
+/*DÉBUT SECTION : FORM CREATION UTILISATION formulaireUser.PHP*/
 
 label {
   /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
@@ -67,9 +53,13 @@ button {
 *
 */
 
-/*DÉBUT SECTION afficher.PHP 
+/*DÉBUT SECTION MESFUNCTIONTABLE.PHP */
 
-box-shadow pour ajouter une ombre transparente subtile autour de la table
+.error {
+  color: #ff0000;
+}
+
+/*box-shadow pour ajouter une ombre transparente subtile autour de la table
 border-collapse pour s'assurer qu'il n'y a pas d'espace entre les bords des cellules*/
 .styled-table {
   margin: auto;
@@ -119,7 +109,18 @@ border-collapse pour s'assurer qu'il n'y a pas d'espace entre les bords des cell
   display: flex;
   justify-content: center;
 }
-body a img {
+
+
+.img-with-text {
+  padding: 50px;
   width: 64px;
-  height: 64px;
+}
+
+.img-with-text img {
+  display: block;
+  margin: 0 auto;
+}
+.img-with-text a{
+  display: flex;
+  justify-content: center;
 }
