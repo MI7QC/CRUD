@@ -21,7 +21,7 @@ function getAllUsers($rechercher = "")
 	$rechercher = "%" . $rechercher . "%";
 
 	$con = getDatabaseConnexion();
-	$requete = "SELECT * FROM utilisateurs WHERE (nom LIKE '$rechercher')";
+	$requete = "SELECT * FROM utilisateurs WHERE CONCAT( nom,  ' ', prenom ) LIKE  '$rechercher' OR CONCAT( prenom,  ' ', nom ) LIKE  '$rechercher'";
 
 	$rows = $con->query($requete);
 	return $rows;
