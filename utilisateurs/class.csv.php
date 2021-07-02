@@ -4,6 +4,7 @@ class CSV{
      static function export($datas,$filename){
          header('Content-Type: text/csv;');
          header('Content-Disposition: attachement; filename="'.$filename.'.csv"');
+       
          $i = 0;
          foreach($datas as $v){
              if($i == 0) {

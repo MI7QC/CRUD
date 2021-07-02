@@ -16,6 +16,7 @@ if ($id==0) {
 	$libelle = "Mettre a jour";
 }
 
+
 //Affiche tout les erreurs dans le form
 if (isset($_GET['erreurs']) ){
 $erreurs=json_decode($_GET['erreurs']);
@@ -62,6 +63,7 @@ $erreurs=json_decode($_GET['erreurs']);
 		</div>
 		<div class="button">
 			<button type="submit" name="envoi"><?php echo $libelle;  ?></button>
+			<button type="submit" name="action" value="copie" formaction="createUpdateDeleteUser.php">Copie Local</button>
 		</div>
 		</p>
 	</form>

@@ -15,18 +15,31 @@ if ($action == "DELETE") {
 	$age = $_POST["age"];
 	$adresse = $_POST["adresse"];
 	if (isset($_POST["cinema"]) == NULL) {
-		$cinema = 0;
+		$_POST["cinema"] = 0;
 	} else {
-		$cinema = 1;
-	}	
+		$_POST["cinema"] = 1;
+	}
 }
 
+
+
+
+
+//  Creation du ficher excel pour sauvegarde local.
+if ($action == "copie") {
+	$datas = array($_POST);
+	//Supprime lelement action dans le tab.
+	unset($datas[0]["action"]);
+	require 'class.csv.php'; 
+	CSV::export($datas,'utilisateurs');
+	exit;
+}
 
 
 if ($action == "CREATE") {
 	validate_fields();
 
-	createUser($nom, $prenom, $age, $adresse, $cinema);
+	createUser($nom, $prenom, $age, $adresse,$_POST["cinema"]);
 	header("location:mainPageUser.php?message=User Created Successfully...!");
 	exit;
 }
@@ -34,7 +47,7 @@ if ($action == "CREATE") {
 if ($action == "UPDATE") {
 	validate_fields();
 
-	updateUser($id, $nom, $prenom, $age, $adresse, $cinema);
+	updateUser($id, $nom, $prenom, $age, $adresse,$_POST["cinema"]);
 	header("location:mainPageUser.php?message=User Updated Successfully...!");
 	exit;
 }

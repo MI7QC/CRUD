@@ -7,6 +7,7 @@ require 'mesFunctionsSQL.php';
     $req->execute();
     $data = $req->fetchAll();
 
+ 
    require 'class.csv.php'; 
    CSV::export($data,'utilisateurs');
 ?>
