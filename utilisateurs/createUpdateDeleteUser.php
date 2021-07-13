@@ -14,11 +14,7 @@ if ($action == "DELETE") {
 	$prenom = $_POST["prenom"];
 	$age = $_POST["age"];
 	$adresse = $_POST["adresse"];
-	if (isset($_POST["cinema"]) == NULL) {
-		$_POST["cinema"] = 0;
-	} else {
-		$_POST["cinema"] = 1;
-	}
+	$_POST['cinema'] = isset($_POST['cinema']) ? 1 : 0;
 	
 }
 
