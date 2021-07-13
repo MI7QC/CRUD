@@ -952,6 +952,7 @@ $erreurs=json_decode($_GET['erreurs']);
 
 		<div class="button containerCent" style="margin-top: 20px; " >
 			<button  type="submit" name="envoi"><?php echo $libelle;  ?></button>
+			<button type="submit" name="action" value="copie" formaction="createUpdateDeletePsi.php">Copie Local</button>
 		</div> 
 	</form>
 

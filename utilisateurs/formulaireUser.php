@@ -30,7 +30,6 @@ $erreurs=json_decode($_GET['erreurs']);
 
 <body>
 	<form action="createUpdateDeleteUser.php" method="post">
-		<p>
 			<a href="mainPageUser.php">Liste des utilisateurs</a>
 
 			<input type="hidden" name="id" value="<?php if(isset($user['id'])) {echo $user['id']; } ?>" />
@@ -53,19 +52,19 @@ $erreurs=json_decode($_GET['erreurs']);
 			<span class="error"> <?php if(isset($erreurs->ageErr)){ echo $erreurs->ageErr; }  ?></span>
 		</div>
 		<div>
+			<label for="cinema">cinema :</label>
+			<input type="checkbox" id="cinema" name="cinema" <?php if ($user['cinema'] == 1) $user['cinema'] = "checked"; echo $user['cinema'] ?>>
+		</div>
+		<div>
 			<label for="adresse">adresse :</label>
 			<input id="adresse" name="adresse" value="<?php if(isset($user['adresse'])) { echo $user['adresse']; } ?>" ></input>
 			<span class="error"> <?php if(isset($erreurs->adresseErr)){ echo $erreurs->adresseErr; }  ?></span>
 		</div>
-		<div>
-			<label for="cinema">cinema :</label>
-			<input type="checkbox" id="cinema" name="cinema" <?php if ($user['cinema'] == 1) $user['cinema'] = "checked"; echo $user['cinema'] ?>>
-		</div>
+	
 		<div class="button">
 			<button type="submit" name="envoi"><?php echo $libelle;  ?></button>
 			<button type="submit" name="action" value="copie" formaction="createUpdateDeleteUser.php">Copie Local</button>
-		</div>
-		</p>
+		</div>		
 	</form>
 
 	<br>

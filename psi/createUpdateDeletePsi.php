@@ -1,6 +1,6 @@
 <?php
 include 'mesFunctionsSQL.php';
-include 'afficherUser.php';
+include 'afficherPsi.php';
 $action = $_POST["action"];
 
 
@@ -26,8 +26,8 @@ if ($action == "DELETE") {
 	$ascenseurNombre = $_POST["ascenseurNombre"];
 	$monteChargeNombre = $_POST["monteChargeNombre"];
 	$communicationDansAscendeur = $_POST["communicationDansAscendeur"];
-	if (isset($_POST["rappelAutomatique"]) == NULL) { $rappelAutomatique = 0; } else { $rappelAutomatique = 1;};
-	if (isset($_POST["rappelManuel"]) == NULL) { $rappelManuel = 0; } else { $rappelManuel = 1;};
+	if (isset($_POST["rappelAutomatique"]) == NULL) { $_POST["rappelAutomatique"] = 0; } else { $_POST["rappelAutomatique"] = 1;};
+	if (isset($_POST["rappelManuel"]) == NULL) { $_POST["rappelManuel"] = 0; } else { $_POST["rappelManuel"] = 1;};
 	$ascenseurPompier = $_POST["ascenseurPompier"];
 	$nombreDeCageDescalierDeSecours = $_POST["nombreDeCageDescalierDeSecours"];
 
@@ -71,27 +71,27 @@ if ($action == "DELETE") {
 	$specifiez = $_POST["specifiez"];
 
 
-	if (isset($_POST["sai"]) == NULL) { $sai = 0; } else { $sai = 1;};
+	if (isset($_POST["sai"]) == NULL) { $_POST["sai"] = 0; } else { $_POST["sai"] = 1;};
 	$saiMarque = $_POST["saiMarque"];
-	if (isset($_POST["adressable"]) == NULL) { $adressable = 0; } else { $adressable = 1;};
-	if (isset($_POST["zoneX"]) == NULL) { $zoneX = 0; } else { $zoneX = 1;};
-	if (isset($_POST["unEtape"]) == NULL) { $unEtape = 0; } else { $unEtape = 1;};
-	if (isset($_POST["deuxetape"]) == NULL) { $deuxetape = 0; } else { $deuxetape = 1;};
-	if (isset($_POST["etp"]) == NULL) { $etp = 0; } else { $etp = 1;};
-	if (isset($_POST["periode"]) == NULL) { $periode = 0; } else { $periode = 1;};
+	if (isset($_POST["adressable"]) == NULL) { $_POST["adressable"] = 0; } else { $_POST["adressable"] = 1;};
+	if (isset($_POST["zoneX"]) == NULL) { $_POST["zoneX"] = 0; } else { $_POST["zoneX"] = 1;};
+	if (isset($_POST["unEtape"]) == NULL) { $_POST["unEtape"] = 0; } else { $_POST["unEtape"] = 1;};
+	if (isset($_POST["deuxetape"]) == NULL) { $_POST["deuxetape"] = 0; } else { $_POST["deuxetape"] = 1;};
+	if (isset($_POST["etp"]) == NULL) { $_POST["etp"] = 0; } else { $_POST["etp"] = 1;};
+	if (isset($_POST["periode"]) == NULL) { $_POST["periode"] = 0; } else { $_POST["periode"] = 1;};
 	$pheure = $_POST["pheure"];
 	$panneauS = $_POST["panneauS"];
-	if (isset($_POST["annonciateur"]) == NULL) { $annonciateur = 0; } else { $annonciateur = 1;};
+	if (isset($_POST["annonciateur"]) == NULL) { $_POST["annonciateur"] = 0; } else { $_POST["annonciateur"] = 1;};
 	$textannonciateur = $_POST["textannonciateur"];
-	if (isset($_POST["rac"]) == NULL) { $rac = 0; } else { $rac = 1;};
+	if (isset($_POST["rac"]) == NULL) { $_POST["rac"] = 0; } else { $_POST["rac"] = 1;};
 	$racNomTel = $_POST["racNomTel"];
-	if (isset($_POST["scu"]) == NULL) { $scu = 0; } else { $scu = 1;};
+	if (isset($_POST["scu"]) == NULL) { $_POST["scu"] = 0; } else { $_POST["scu"] = 1;};
 	$scuMarque = $_POST["scuMarque"];
 
-	if (isset($_POST["rda"]) == NULL) { $rda = 0; } else { $rda = 1;};
-	if (isset($_POST["adv"]) == NULL) { $adv = 0; } else { $adv = 1;};
-	if (isset($_POST["pressE"]) == NULL) { $pressE = 0; } else { $pressE = 1;};
-	if (isset($_POST["dea"]) == NULL) { $dea = 0; } else { $dea = 1;};
+	if (isset($_POST["rda"]) == NULL) { $_POST["rda"] = 0; } else { $_POST["rda"] = 1;};
+	if (isset($_POST["adv"]) == NULL) { $_POST["adv"] = 0; } else { $_POST["adv"] = 1;};
+	if (isset($_POST["pressE"]) == NULL) { $_POST["pressE"] = 0; } else { $_POST["pressE"] = 1;};
+	if (isset($_POST["dea"]) == NULL) { $_POST["dea"] = 0; } else { $_POST["dea"] = 1;};
 	if (isset($_POST["rdrm"]) == NULL) { $rdrm = 0; } else { $rdrm = 1;};
 	if (isset($_POST["tac"]) == NULL) { $tac = 0; } else { $tac = 1;};
 	if (isset($_POST["aaag"]) == NULL) { $aaag = 0; } else { $aaag = 1;};
@@ -217,6 +217,15 @@ if ($action == "DELETE") {
 	if (isset($_POST["PanneaucontroleP"]) == NULL) { $PanneaucontroleP = 0; } else { $PanneaucontroleP = 1;};
 }
 
+//  Creation du ficher excel pour sauvegarde local.
+if ($action == "copie") {
+	$datas = array($_POST);
+	//Supprime lelement action dans le tab.
+	unset($datas[0]["action"]);
+	require '../class/class.csv.php'; 
+	CSV::export($datas,'PSI');
+	exit;
+}
 
 
 if ($action == "CREATE") {
@@ -224,12 +233,12 @@ if ($action == "CREATE") {
 
 	createUser($nomADB, $coordonnateur, $telJour, $telSoir, $nomADP, $responsable, $tel, $courriel,
 	$principale, $autre, $nombreDeSousSol, $NombreDetage, $nombreDappentis, $nombreDeGrenier, $ascenseurNombre, $monteChargeNombre,
-	$communicationDansAscendeur, $rappelAutomatique, $rappelManuel, $ascenseurPompier, $nombreDeCageDescalierDeSecours,
+	$communicationDansAscendeur, $_POST["rappelAutomatique"], $_POST["rappelManuel"], $ascenseurPompier, $nombreDeCageDescalierDeSecours,
 	$nbreDappartements, $pJour, $pSoir, $pNuit, $pFDS, $oJour,$oSoir, $oNuit, $oFDS, $rJour, $rSoir, $rNuit, $rFDS, $paba,
 	$cinema, $bars, $ecole, $expositions, $restaurants, $prison, $hopital, $clinique, $chsld, $appartements, $hotel, $accueil, $hebergements, $bureaux, $cabinets, 
 	$magasins, $detaillants, $commerce, $ateliers, $entrepot, $usine, $stationnement, $specifiez,
-	$sai, $saiMarque, $adressable, $zoneX, $unEtape, $deuxetape, $etp, $periode, $pheure, $panneauS, $annonciateur, $textannonciateur, $rac, $racNomTel, $scu, $scuMarque,
-	$rda,$adv,$pressE,$dea,$rdrm,$tac,$aaag,$autreS,
+	$_POST["sai"], $saiMarque, $_POST["adressable"], $_POST["zoneX"], $_POST["unEtape"], $_POST["deuxetape"], $_POST["etp"], $_POST["periode"], $pheure, $panneauS, $_POST["annonciateur"], $textannonciateur, $_POST["rac"], $racNomTel, $_POST["scu"], $scuMarque,
+	$_POST["rda"],$_POST["adv"],$_POST["pressE"],$_POST["dea"],$rdrm,$tac,$aaag,$autreS,
 	$sdga,$eau,$air,$dssogs,$dtlb,$pompeAfeu,$pafeu,$ralg,$vds,$cageE,$autreShuitdeux,$autreShuit,$bid,$raccordP,$raccord,$extincteursp,$typeE,$sep,$efixe,$efixetext,$relieUn,
 	$eGaz,$eGazText,$reliedeux,$preaction,$delugue,$delugueText,$relietrois,$autresectionhuit,$autersHuitText,$reliequatre,
 	$vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText,
@@ -247,12 +256,12 @@ if ($action == "UPDATE") {
 
 	updateUser($id, $nomADB, $coordonnateur, $telJour, $telSoir, $nomADP, $responsable, $tel, $courriel,
  	 $principale, $autre, $nombreDeSousSol, $NombreDetage, $nombreDappentis, $nombreDeGrenier, $ascenseurNombre, $monteChargeNombre, 
-	 $communicationDansAscendeur, $rappelAutomatique, $rappelManuel, $ascenseurPompier, $nombreDeCageDescalierDeSecours,
+	 $communicationDansAscendeur, $_POST["rappelAutomatique"], $_POST["rappelManuel"], $ascenseurPompier, $nombreDeCageDescalierDeSecours,
 	 $nbreDappartements, $pJour, $pSoir, $pNuit, $pFDS, $oJour,$oSoir, $oNuit, $oFDS, $rJour, $rSoir, $rNuit, $rFDS, $paba,
 	 $cinema, $bars, $ecole, $expositions, $restaurants, $prison, $hopital, $clinique, $chsld, $appartements, $hotel, $accueil, $hebergements, $bureaux, $cabinets, 
 	 $magasins, $detaillants, $commerce, $ateliers, $entrepot, $usine, $stationnement, $specifiez,
-	 $sai, $saiMarque, $adressable, $zoneX, $unEtape, $deuxetape, $etp, $periode, $pheure, $panneauS, $annonciateur, $textannonciateur, $rac, $racNomTel, $scu, $scuMarque,
-	 $rda,$adv,$pressE,$dea,$rdrm,$tac,$aaag,$autreS,
+	 $_POST["sai"], $saiMarque, $_POST["adressable"], $_POST["zoneX"], $_POST["unEtape"], $_POST["deuxetape"], $_POST["etp"], $_POST["periode"], $pheure, $panneauS, $_POST["annonciateur"], $textannonciateur, $_POST["rac"], $racNomTel, $_POST["scu"], $scuMarque,
+	 $_POST["rda"],$_POST["adv"],$_POST["pressE"],$_POST["dea"],$rdrm,$tac,$aaag,$autreS,
 	 $sdga,$eau,$air,$dssogs,$dtlb,$pompeAfeu,$pafeu,$ralg,$vds,$cageE,$autreShuitdeux,$autreShuit,$bid,$raccordP,$raccord,$extincteursp,$typeE,$sep,$efixe,$efixetext,$relieUn,
 	 $eGaz,$eGazText,$reliedeux,$preaction,$delugue,$delugueText,$relietrois,$autresectionhuit,$autersHuitText,$reliequatre,
 	 $vpea,$panneauA,$StationM,$detecteurD,$barreP,$BoutonP,$cle,$autresneuf,$autreneufText,$retenueM,$rideau,$Systemed,$parPA,$controle,$controlText,$spe,$sss,$toutb,$sdcc,$sdccText,$sas,$sasText,

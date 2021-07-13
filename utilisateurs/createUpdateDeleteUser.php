@@ -19,6 +19,7 @@ if ($action == "DELETE") {
 	} else {
 		$_POST["cinema"] = 1;
 	}
+	
 }
 
 
@@ -30,7 +31,7 @@ if ($action == "copie") {
 	$datas = array($_POST);
 	//Supprime lelement action dans le tab.
 	unset($datas[0]["action"]);
-	require 'class.csv.php'; 
+	require '../class/class.csv.php'; 
 	CSV::export($datas,'utilisateurs');
 	exit;
 }

@@ -3,10 +3,10 @@
 require 'mesFunctionsSQL.php'; 
 
     $con = getDatabaseConnexion();
-    $req = $con->prepare('SELECT * FROM utilisateurs');
+    $req = $con->prepare('SELECT * FROM psi');
     $req->execute();
     $data = $req->fetchAll();
 
    require '../class/class.csv.php'; 
-   CSV::export($data,'utilisateurs');
+   CSV::export($data,'Psi');
 ?>
