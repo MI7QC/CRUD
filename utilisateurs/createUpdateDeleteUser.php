@@ -24,13 +24,27 @@ if ($action == "DELETE") {
 
 //  Creation du ficher excel pour sauvegarde local.
 if ($action == "copie") {
-	$datas = array($_POST);
-	//Supprime lelement action dans le tab.
-	unset($datas[0]["action"]);
 	require '../class/class.csv.php'; 
-	CSV::export($datas,'utilisateurs');
+	CSV::export([
+		'nom' => $_POST['nom'],
+		'prenom' => $_POST['prenom'],
+		'age' => $_POST['age'],
+    	'cinema' => $_POST['cinema'],
+		'adresse' => $_POST['adresse'],
+	],'utilisateurs');
 	exit;
 }
+
+
+// //  Creation du ficher excel pour sauvegarde local.
+// if ($action == "copie") {
+// 	$datas = array($_POST);
+// 	//Supprime lelement action dans le tab.
+// 	unset($datas[0]["action"]);
+// 	require '../class/class.csv.php'; 
+// 	CSV::export($datas,'utilisateurs');
+// 	exit;
+// }
 
 
 if ($action == "CREATE") {
