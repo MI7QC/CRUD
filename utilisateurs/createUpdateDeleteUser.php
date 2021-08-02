@@ -22,7 +22,7 @@ if ($action == "DELETE") {
 
 
 
-//  Creation du ficher excel pour sauvegarde local.
+// Creation du ficher excel pour sauvegarde local.
 if ($action == "copie") {
 	require '../class/class.csv.php'; 
 	CSV::export([
@@ -31,7 +31,7 @@ if ($action == "copie") {
 		'age' => $_POST['age'],
     	'cinema' => $_POST['cinema'],
 		'adresse' => $_POST['adresse'],
-	],'utilisateurs');
+	],'utilisateursSolo');
 	exit;
 }
 
