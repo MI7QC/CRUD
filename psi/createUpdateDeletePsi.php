@@ -26,8 +26,8 @@ if ($action == "DELETE") {
 	$ascenseurNombre = $_POST["ascenseurNombre"];
 	$monteChargeNombre = $_POST["monteChargeNombre"];
 	$communicationDansAscendeur = $_POST["communicationDansAscendeur"];
-	if (isset($_POST["rappelAutomatique"]) == NULL) { $_POST["rappelAutomatique"] = 0; } else { $_POST["rappelAutomatique"] = 1;};
-	if (isset($_POST["rappelManuel"]) == NULL) { $_POST["rappelManuel"] = 0; } else { $_POST["rappelManuel"] = 1;};
+	$_POST['rappelAutomatique'] = isset($_POST['rappelAutomatique']) ? 1 : 0;
+	$_POST['rappelManuel'] = isset($_POST['rappelManuel']) ? 1 : 0;
 	$ascenseurPompier = $_POST["ascenseurPompier"];
 	$nombreDeCageDescalierDeSecours = $_POST["nombreDeCageDescalierDeSecours"];
 
@@ -70,162 +70,384 @@ if ($action == "DELETE") {
 	$stationnement = $_POST["stationnement"];
 	$specifiez = $_POST["specifiez"];
 
-
-	if (isset($_POST["sai"]) == NULL) { $_POST["sai"] = 0; } else { $_POST["sai"] = 1;};
+	$_POST['sai'] = isset($_POST['sai']) ? 1 : 0;
 	$saiMarque = $_POST["saiMarque"];
-	if (isset($_POST["adressable"]) == NULL) { $_POST["adressable"] = 0; } else { $_POST["adressable"] = 1;};
-	if (isset($_POST["zoneX"]) == NULL) { $_POST["zoneX"] = 0; } else { $_POST["zoneX"] = 1;};
-	if (isset($_POST["unEtape"]) == NULL) { $_POST["unEtape"] = 0; } else { $_POST["unEtape"] = 1;};
-	if (isset($_POST["deuxetape"]) == NULL) { $_POST["deuxetape"] = 0; } else { $_POST["deuxetape"] = 1;};
-	if (isset($_POST["etp"]) == NULL) { $_POST["etp"] = 0; } else { $_POST["etp"] = 1;};
-	if (isset($_POST["periode"]) == NULL) { $_POST["periode"] = 0; } else { $_POST["periode"] = 1;};
+	$_POST['adressable'] = isset($_POST['adressable']) ? 1 : 0;
+	$_POST['zoneX'] = isset($_POST['zoneX']) ? 1 : 0;
+	$_POST['unEtape'] = isset($_POST['unEtape']) ? 1 : 0;
+	$_POST['deuxetape'] = isset($_POST['deuxetape']) ? 1 : 0;
+	$_POST['etp'] = isset($_POST['etp']) ? 1 : 0;
+	$_POST['periode'] = isset($_POST['periode']) ? 1 : 0;
 	$pheure = $_POST["pheure"];
 	$panneauS = $_POST["panneauS"];
-	if (isset($_POST["annonciateur"]) == NULL) { $_POST["annonciateur"] = 0; } else { $_POST["annonciateur"] = 1;};
+	$_POST['annonciateur'] = isset($_POST['annonciateur']) ? 1 : 0;
 	$textannonciateur = $_POST["textannonciateur"];
-	if (isset($_POST["rac"]) == NULL) { $_POST["rac"] = 0; } else { $_POST["rac"] = 1;};
+	$_POST['rac'] = isset($_POST['rac']) ? 1 : 0;
 	$racNomTel = $_POST["racNomTel"];
-	if (isset($_POST["scu"]) == NULL) { $_POST["scu"] = 0; } else { $_POST["scu"] = 1;};
+	$_POST['scu'] = isset($_POST['scu']) ? 1 : 0;
 	$scuMarque = $_POST["scuMarque"];
 
-	if (isset($_POST["rda"]) == NULL) { $_POST["rda"] = 0; } else { $_POST["rda"] = 1;};
-	if (isset($_POST["adv"]) == NULL) { $_POST["adv"] = 0; } else { $_POST["adv"] = 1;};
-	if (isset($_POST["pressE"]) == NULL) { $_POST["pressE"] = 0; } else { $_POST["pressE"] = 1;};
-	if (isset($_POST["dea"]) == NULL) { $_POST["dea"] = 0; } else { $_POST["dea"] = 1;};
-	if (isset($_POST["rdrm"]) == NULL) { $rdrm = 0; } else { $rdrm = 1;};
-	if (isset($_POST["tac"]) == NULL) { $tac = 0; } else { $tac = 1;};
-	if (isset($_POST["aaag"]) == NULL) { $aaag = 0; } else { $aaag = 1;};
+
+	$_POST['rda'] = isset($_POST['rda']) ? 1 : 0;
+	$_POST['adv'] = isset($_POST['adv']) ? 1 : 0;
+	$_POST['pressE'] = isset($_POST['pressE']) ? 1 : 0;
+	$_POST['dea'] = isset($_POST['dea']) ? 1 : 0;
+	$_POST['rdrm'] = isset($_POST['rdrm']) ? 1 : 0;
+	$_POST['tac'] = isset($_POST['tac']) ? 1 : 0;
+	$_POST['aaag'] = isset($_POST['aaag']) ? 1 : 0;
+	$_POST['cinema'] = isset($_POST['cinema']) ? 1 : 0;
 	$autreS = $_POST["autreS"];
 
-	if (isset($_POST["sdga"]) == NULL) { $sdga = 0; } else { $sdga = 1;};
-	if (isset($_POST["eau"]) == NULL) { $eau = 0; } else { $eau = 1;};
-	if (isset($_POST["air"]) == NULL) { $air = 0; } else { $air = 1;};
-	if (isset($_POST["dssogs"]) == NULL) { $dssogs = 0; } else { $dssogs = 1;};
-	if (isset($_POST["dtlb"]) == NULL) { $dtlb = 0; } else { $dtlb = 1;};
-	if (isset($_POST["pompeAfeu"]) == NULL) { $pompeAfeu = 0; } else { $pompeAfeu = 1;};
-	$pafeu = $_POST["pafeu"];
-	if (isset($_POST["ralg"]) == NULL) { $ralg = 0; } else { $ralg = 1;};
-	if (isset($_POST["vds"]) == NULL) { $vds = 0; } else { $vds = 1;};
-	if (isset($_POST["cageE"]) == NULL) { $cageE = 0; } else { $cageE = 1;};
-	if (isset($_POST["autreShuitdeux"]) == NULL) { $autreShuitdeux = 0; } else { $autreShuitdeux = 1;};
-	$autreShuit = $_POST["autreShuit"];
-	if (isset($_POST["bid"]) == NULL) { $bid = 0; } else { $bid = 1;};
-	if (isset($_POST["raccordP"]) == NULL) { $raccordP = 0; } else { $raccordP = 1;};
-	$raccord = $_POST["raccord"];
-	if (isset($_POST["extincteursp"]) == NULL) { $extincteursp = 0; } else { $extincteursp = 1;};
-	$typeE = $_POST["typeE"];
-	if (isset($_POST["sep"]) == NULL) { $sep = 0; } else { $sep = 1;};
-	if (isset($_POST["efixe"]) == NULL) { $efixe = 0; } else { $efixe = 1;};
-	$efixetext = $_POST["efixetext"];
-	if (isset($_POST["relieUn"]) == NULL) { $relieUn = 0; } else { $relieUn = 1;};
-	if (isset($_POST["eGaz"]) == NULL) { $eGaz = 0; } else { $eGaz = 1;};
-	$eGazText = $_POST["eGazText"];
-	if (isset($_POST["reliedeux"]) == NULL) { $reliedeux = 0; } else { $reliedeux = 1;};
-	if (isset($_POST["preaction"]) == NULL) { $preaction = 0; } else { $preaction = 1;};
-	if (isset($_POST["delugue"]) == NULL) { $delugue = 0; } else { $delugue = 1;};
-	$delugueText = $_POST["delugueText"];
-	if (isset($_POST["relietrois"]) == NULL) { $relietrois = 0; } else { $relietrois = 1;};
-	if (isset($_POST["autresectionhuit"]) == NULL) { $autresectionhuit = 0; } else { $autresectionhuit = 1;};
-	$autersHuitText = $_POST["autersHuitText"];
-	if (isset($_POST["reliequatre"]) == NULL) { $reliequatre = 0; } else { $reliequatre = 1;};
 
-	if (isset($_POST["vpea"]) == NULL) { $vpea = 0; } else { $vpea = 1;};
-	if (isset($_POST["panneauA"]) == NULL) { $panneauA = 0; } else { $panneauA = 1;};
-	if (isset($_POST["StationM"]) == NULL) { $StationM = 0; } else { $StationM = 1;};
-	if (isset($_POST["detecteurD"]) == NULL) { $detecteurD = 0; } else { $detecteurD = 1;};
-	if (isset($_POST["barreP"]) == NULL) { $barreP = 0; } else { $barreP = 1;};
-	if (isset($_POST["BoutonP"]) == NULL) { $BoutonP = 0; } else { $BoutonP = 1;};
-	if (isset($_POST["cle"]) == NULL) { $cle = 0; } else { $cle = 1;};
-	if (isset($_POST["autresneuf"]) == NULL) { $autresneuf = 0; } else { $autresneuf = 1;};
+	$_POST['sdga'] = isset($_POST['sdga']) ? 1 : 0;
+	$_POST['eau'] = isset($_POST['eau']) ? 1 : 0;
+	$_POST['air'] = isset($_POST['air']) ? 1 : 0;
+	$_POST['dssogs'] = isset($_POST['dssogs']) ? 1 : 0;
+	$_POST['dtlb'] = isset($_POST['dtlb']) ? 1 : 0;
+	$_POST['pompeAfeu'] = isset($_POST['pompeAfeu']) ? 1 : 0;
+	$pafeu = $_POST["pafeu"];
+	$_POST['ralg'] = isset($_POST['ralg']) ? 1 : 0;
+	$_POST['vds'] = isset($_POST['vds']) ? 1 : 0;
+	$_POST['cageE'] = isset($_POST['cageE']) ? 1 : 0;
+	$_POST['autreShuitdeux'] = isset($_POST['autreShuitdeux']) ? 1 : 0;
+	$autreShuit = $_POST["autreShuit"];
+	$_POST['bid'] = isset($_POST['bid']) ? 1 : 0;
+	$_POST['raccordP'] = isset($_POST['raccordP']) ? 1 : 0;
+	$raccord = $_POST["raccord"];
+	$_POST['extincteursp'] = isset($_POST['extincteursp']) ? 1 : 0;
+	$typeE = $_POST["typeE"];
+	$_POST['sep'] = isset($_POST['sep']) ? 1 : 0;
+	$_POST['efixe'] = isset($_POST['efixe']) ? 1 : 0;
+	$efixetext = $_POST["efixetext"];
+	$_POST['relieUn'] = isset($_POST['relieUn']) ? 1 : 0;
+	$_POST['eGaz'] = isset($_POST['eGaz']) ? 1 : 0;
+	$eGazText = $_POST["eGazText"];
+	$_POST['reliedeux'] = isset($_POST['reliedeux']) ? 1 : 0;
+	$_POST['preaction'] = isset($_POST['preaction']) ? 1 : 0;
+	$_POST['delugue'] = isset($_POST['delugue']) ? 1 : 0;
+	$delugueText = $_POST["delugueText"];
+	$_POST['relietrois'] = isset($_POST['relietrois']) ? 1 : 0;
+	$_POST['autresectionhuit'] = isset($_POST['autresectionhuit']) ? 1 : 0;
+	$autersHuitText = $_POST["autersHuitText"];
+	$_POST['reliequatre'] = isset($_POST['reliequatre']) ? 1 : 0;
+
+
+	$_POST['vpea'] = isset($_POST['vpea']) ? 1 : 0;
+	$_POST['panneauA'] = isset($_POST['panneauA']) ? 1 : 0;
+	$_POST['StationM'] = isset($_POST['StationM']) ? 1 : 0;
+	$_POST['detecteurD'] = isset($_POST['detecteurD']) ? 1 : 0;
+	$_POST['barreP'] = isset($_POST['barreP']) ? 1 : 0;
+	$_POST['BoutonP'] = isset($_POST['BoutonP']) ? 1 : 0;
+	$_POST['cle'] = isset($_POST['cle']) ? 1 : 0;
+	$_POST['autresneuf'] = isset($_POST['autresneuf']) ? 1 : 0;
 	$autreneufText = $_POST["autreneufText"];
-	if (isset($_POST["retenueM"]) == NULL) { $retenueM = 0; } else { $retenueM = 1;};
-	if (isset($_POST["rideau"]) == NULL) { $rideau = 0; } else { $rideau = 1;};
-	if (isset($_POST["Systemed"]) == NULL) { $Systemed = 0; } else { $Systemed = 1;};
-	if (isset($_POST["parPA"]) == NULL) { $parPA = 0; } else { $parPA = 1;};
-	if (isset($_POST["controle"]) == NULL) { $controle = 0; } else { $controle = 1;};
+	$_POST['retenueM'] = isset($_POST['retenueM']) ? 1 : 0;
+	$_POST['rideau'] = isset($_POST['rideau']) ? 1 : 0;
+	$_POST['Systemed'] = isset($_POST['Systemed']) ? 1 : 0;
+	$_POST['parPA'] = isset($_POST['parPA']) ? 1 : 0;
+	$_POST['controle'] = isset($_POST['controle']) ? 1 : 0;
 	$controlText = $_POST["controlText"];
-	if (isset($_POST["spe"]) == NULL) { $spe = 0; } else { $spe = 1;};
-	if (isset($_POST["sss"]) == NULL) { $sss = 0; } else { $sss = 1;};
-	if (isset($_POST["toutb"]) == NULL) { $toutb = 0; } else { $toutb = 1;};
-	if (isset($_POST["sdcc"]) == NULL) { $sdcc = 0; } else { $sdcc = 1;};
+	$_POST['spe'] = isset($_POST['spe']) ? 1 : 0;
+	$_POST['sss'] = isset($_POST['sss']) ? 1 : 0;
+	$_POST['toutb'] = isset($_POST['toutb']) ? 1 : 0;
+	$_POST['sdcc'] = isset($_POST['sdcc']) ? 1 : 0;
 	$sdccText = $_POST["sdccText"];
-	if (isset($_POST["sas"]) == NULL) { $sas = 0; } else { $sas = 1;};
+	$_POST['sas'] = isset($_POST['sas']) ? 1 : 0;
 	$sasText = $_POST["sasText"];
 
 
-	if (isset($_POST["uea"]) == NULL) { $uea = 0; } else { $uea = 1;};
-	if (isset($_POST["udl"]) == NULL) { $udl = 0; } else { $udl = 1;};
-	if (isset($_POST["generatrice"]) == NULL) { $generatrice = 0; } else { $generatrice = 1;};
+	$_POST['uea'] = isset($_POST['uea']) ? 1 : 0;
+	$_POST['udl'] = isset($_POST['udl']) ? 1 : 0;
+	$_POST['generatrice'] = isset($_POST['generatrice']) ? 1 : 0;
 	$modele = $_POST["modele"];
 	$amp = $_POST["amp"];
-	if (isset($_POST["exteroeir"]) == NULL) { $exteroeir = 0; } else { $exteroeir = 1;};
-	if (isset($_POST["surtoit"]) == NULL) { $surtoit = 0; } else { $surtoit = 1;};
-	if (isset($_POST["interieur"]) == NULL) { $interieur = 0; } else { $interieur = 1;};
+	$_POST['exteroeir'] = isset($_POST['exteroeir']) ? 1 : 0;
+	$_POST['surtoit'] = isset($_POST['surtoit']) ? 1 : 0;
+	$_POST['interieur'] = isset($_POST['interieur']) ? 1 : 0;
 	$interieurText = $_POST["interieurText"];
-	if (isset($_POST["diesel"]) == NULL) { $diesel = 0; } else { $diesel = 1;};
-	if (isset($_POST["gazn"]) == NULL) { $gazn = 0; } else { $gazn = 1;};
-	if (isset($_POST["essence"]) == NULL) { $essence = 0; } else { $essence = 1;};
-	if (isset($_POST["Propane"]) == NULL) { $Propane = 0; } else { $Propane = 1;};
+	$_POST['diesel'] = isset($_POST['diesel']) ? 1 : 0;
+	$_POST['gazn'] = isset($_POST['gazn']) ? 1 : 0;
+	$_POST['essence'] = isset($_POST['essence']) ? 1 : 0;
+	$_POST['Propane'] = isset($_POST['Propane']) ? 1 : 0;
 
 
-	if (isset($_POST["gaznaturel"]) == NULL) { $gaznaturel = 0; } else { $gaznaturel = 1;};
-	if (isset($_POST["gazp"]) == NULL) { $gazp = 0; } else { $gazp = 1;};
-	if (isset($_POST["autrereservoir"]) == NULL) { $autrereservoir = 0; } else { $autrereservoir = 1;};
+	$_POST['gaznaturel'] = isset($_POST['gaznaturel']) ? 1 : 0;
+	$_POST['gazp'] = isset($_POST['gazp']) ? 1 : 0;
+	$_POST['autrereservoir'] = isset($_POST['autrereservoir']) ? 1 : 0;
 	$autrereservoirtext = $_POST["autrereservoirtext"];
-	if (isset($_POST["planetage"]) == NULL) { $planetage = 0; } else { $planetage = 1;};
+	$_POST['planetage'] = isset($_POST['planetage']) ? 1 : 0;
+
 
 	$autreinfo = $_POST["autreinfo"];
 
-	if (isset($_POST["paneauAlarmeP"]) == NULL) { $paneauAlarmeP = 0; } else { $paneauAlarmeP = 1;};
-	if (isset($_POST["ExterieurP"]) == NULL) { $ExterieurP = 0; } else { $ExterieurP = 1;};
-	if (isset($_POST["interieurP"]) == NULL) { $interieurP = 0; } else { $interieurP = 1;};
-	if (isset($_POST["boutonsilenceP"]) == NULL) { $boutonsilenceP = 0; } else { $boutonsilenceP = 1;};
-	if (isset($_POST["remiseP"]) == NULL) { $remiseP = 0; } else { $remiseP = 1;};
-	if (isset($_POST["accusedeP"]) == NULL) { $accusedeP = 0; } else { $accusedeP = 1;};
-	if (isset($_POST["PanneauP"]) == NULL) { $PanneauP = 0; } else { $PanneauP = 1;};
-	if (isset($_POST["microP"]) == NULL) { $microP = 0; } else { $microP = 1;};
-	if (isset($_POST["teleP"]) == NULL) { $teleP = 0; } else { $teleP = 1;};
-	if (isset($_POST["zones"]) == NULL) { $zones = 0; } else { $zones = 1;};
-	if (isset($_POST["systemeP"]) == NULL) { $systemeP = 0; } else { $systemeP = 1;};
-	if (isset($_POST["vueP"]) == NULL) { $vueP = 0; } else { $vueP = 1;};
-	if (isset($_POST["chaqueP"]) == NULL) { $chaqueP = 0; } else { $chaqueP = 1;};
-	if (isset($_POST["vanneP"]) == NULL) { $vanneP = 0; } else { $vanneP = 1;};
-	if (isset($_POST["vannedeP"]) == NULL) { $vannedeP = 0; } else { $vannedeP = 1;};
-	if (isset($_POST["interrupteurP"]) == NULL) { $interrupteurP = 0; } else { $interrupteurP = 1;};
-	if (isset($_POST["vanneetP"]) == NULL) { $vanneetP = 0; } else { $vanneetP = 1;};
-	if (isset($_POST["pompeaP"]) == NULL) { $pompeaP = 0; } else { $pompeaP = 1;};
-	if (isset($_POST["vuedP"]) == NULL) { $vuedP = 0; } else { $vuedP = 1;};
-	if (isset($_POST["panneaudecP"]) == NULL) { $panneaudecP = 0; } else { $panneaudecP = 1;};
-	if (isset($_POST["boutonetP"]) == NULL) { $boutonetP = 0; } else { $boutonetP = 1;};
-	if (isset($_POST["systemesP"]) == NULL) { $systemesP = 0; } else { $systemesP = 1;};
-	if (isset($_POST["bonbonneP"]) == NULL) { $bonbonneP = 0; } else { $bonbonneP = 1;};
-	if (isset($_POST["declencheurP"]) == NULL) { $declencheurP = 0; } else { $declencheurP = 1;};
-	if (isset($_POST["preactionP"]) == NULL) { $preactionP = 0; } else { $preactionP = 1;};
-	if (isset($_POST["exterieurPhoto"]) == NULL) { $exterieurPhoto = 0; } else { $exterieurPhoto = 1;};
-	if (isset($_POST["interieurPhoto"]) == NULL) { $interieurPhoto = 0; } else { $interieurPhoto = 1;};
-	if (isset($_POST["generatriceP"]) == NULL) { $generatriceP = 0; } else { $generatriceP = 1;};
-	if (isset($_POST["vuePhoto"]) == NULL) { $vuePhoto = 0; } else { $vuePhoto = 1;};
-	if (isset($_POST["panneaudeP"]) == NULL) { $panneaudeP = 0; } else { $panneaudeP = 1;};
-	if (isset($_POST["boutonarretP"]) == NULL) { $boutonarretP = 0; } else { $boutonarretP = 1;};
-	if (isset($_POST["ups"]) == NULL) { $ups = 0; } else { $ups = 1;};
-	if (isset($_POST["ascenseursP"]) == NULL) { $ascenseursP = 0; } else { $ascenseursP = 1;};
-	if (isset($_POST["panneaurappelP"]) == NULL) { $panneaurappelP = 0; } else { $panneaurappelP = 1;};
-	if (isset($_POST["boutonrappel"]) == NULL) { $boutonrappel = 0; } else { $boutonrappel = 1;};
-	if (isset($_POST["panneauintP"]) == NULL) { $panneauintP = 0; } else { $panneauintP = 1;};
-	if (isset($_POST["systemeappelP"]) == NULL) { $systemeappelP = 0; } else { $systemeappelP = 1;};
-	if (isset($_POST["desenfumageP"]) == NULL) { $desenfumageP = 0; } else { $desenfumageP = 1;};
-	if (isset($_POST["PanneaucontroleP"]) == NULL) { $PanneaucontroleP = 0; } else { $PanneaucontroleP = 1;};
+	$_POST['paneauAlarmeP'] = isset($_POST['paneauAlarmeP']) ? 1 : 0;
+	$_POST['ExterieurP'] = isset($_POST['ExterieurP']) ? 1 : 0;
+	$_POST['interieurP'] = isset($_POST['interieurP']) ? 1 : 0;
+	$_POST['boutonsilenceP'] = isset($_POST['boutonsilenceP']) ? 1 : 0;
+	$_POST['remiseP'] = isset($_POST['remiseP']) ? 1 : 0;
+	$_POST['accusedeP'] = isset($_POST['accusedeP']) ? 1 : 0;
+	$_POST['PanneauP'] = isset($_POST['PanneauP']) ? 1 : 0;
+	$_POST['microP'] = isset($_POST['microP']) ? 1 : 0;
+	$_POST['teleP'] = isset($_POST['teleP']) ? 1 : 0;
+	$_POST['zones'] = isset($_POST['zones']) ? 1 : 0;
+	$_POST['systemeP'] = isset($_POST['systemeP']) ? 1 : 0;
+	$_POST['vueP'] = isset($_POST['vueP']) ? 1 : 0;
+	$_POST['chaqueP'] = isset($_POST['chaqueP']) ? 1 : 0;
+	$_POST['vanneP'] = isset($_POST['vanneP']) ? 1 : 0;
+	$_POST['vannedeP'] = isset($_POST['vannedeP']) ? 1 : 0;
+	$_POST['interrupteurP'] = isset($_POST['interrupteurP']) ? 1 : 0;
+	$_POST['vanneetP'] = isset($_POST['vanneetP']) ? 1 : 0;
+	$_POST['pompeaP'] = isset($_POST['pompeaP']) ? 1 : 0;
+	$_POST['vuedP'] = isset($_POST['vuedP']) ? 1 : 0;
+	$_POST['panneaudecP'] = isset($_POST['panneaudecP']) ? 1 : 0;
+	$_POST['boutonetP'] = isset($_POST['boutonetP']) ? 1 : 0;
+	$_POST['systemesP'] = isset($_POST['systemesP']) ? 1 : 0;
+	$_POST['bonbonneP'] = isset($_POST['bonbonneP']) ? 1 : 0;
+	$_POST['declencheurP'] = isset($_POST['declencheurP']) ? 1 : 0;
+	$_POST['preactionP'] = isset($_POST['preactionP']) ? 1 : 0;
+	$_POST['exterieurPhoto'] = isset($_POST['exterieurPhoto']) ? 1 : 0;
+	$_POST['interieurPhoto'] = isset($_POST['interieurPhoto']) ? 1 : 0;
+	$_POST['generatriceP'] = isset($_POST['generatriceP']) ? 1 : 0;
+	$_POST['vuePhoto'] = isset($_POST['vuePhoto']) ? 1 : 0;
+	$_POST['panneaudeP'] = isset($_POST['panneaudeP']) ? 1 : 0;
+	$_POST['boutonarretP'] = isset($_POST['boutonarretP']) ? 1 : 0;
+	$_POST['ups'] = isset($_POST['ups']) ? 1 : 0;
+	$_POST['ascenseursP'] = isset($_POST['ascenseursP']) ? 1 : 0;
+	$_POST['panneaurappelP'] = isset($_POST['panneaurappelP']) ? 1 : 0;
+	$_POST['boutonrappel'] = isset($_POST['boutonrappel']) ? 1 : 0;
+	$_POST['panneauintP'] = isset($_POST['panneauintP']) ? 1 : 0;
+	$_POST['systemeappelP'] = isset($_POST['systemeappelP']) ? 1 : 0;
+	$_POST['desenfumageP'] = isset($_POST['desenfumageP']) ? 1 : 0;
+	$_POST['PanneaucontroleP'] = isset($_POST['PanneaucontroleP']) ? 1 : 0;
 }
+
+
+
 
 //  Creation du ficher excel pour sauvegarde local.
 if ($action == "copie") {
-	$datas = array($_POST);
-	//Supprime lelement action dans le tab.
-	unset($datas[0]["action"]);
 	require '../class/class.csv.php'; 
-	CSV::export($datas,'PSI');
+	CSV::export([
+		'nomADB' => $_POST['nomADB'],
+		'coordonnateur' => $_POST['coordonnateur'],
+		'telJour' => $_POST['telJour'],
+    	'telSoir' => $_POST['telSoir'],
+		'nomADP' => $_POST['nomADP'],
+		'responsable' => $_POST['responsable'],
+		'tel' => $_POST['tel'],
+		'courriel' => $_POST['courriel'],
+
+		'principale' => $_POST['principale'],
+		'autre' => $_POST['autre'],
+		'nombreDeSousSol' => $_POST['nombreDeSousSol'],
+		'NombreDetage' => $_POST['NombreDetage'],
+		'nombreDappentis' => $_POST['nombreDappentis'],
+		'nombreDeGrenier' => $_POST['nombreDeGrenier'],
+		'ascenseurNombre' => $_POST['ascenseurNombre'],
+		'monteChargeNombre' => $_POST['monteChargeNombre'],
+		'communicationDansAscendeur' => $_POST['communicationDansAscendeur'],
+		'rappelAutomatique' => $_POST['rappelAutomatique'],
+		'rappelManuel' => $_POST['rappelManuel'],
+		'ascenseurPompier' => $_POST['ascenseurPompier'],
+		'nombreDeCageDescalierDeSecours' => $_POST['nombreDeCageDescalierDeSecours'],
+
+		'nbreDappartements' => $_POST['nbreDappartements'],
+		'pJour' => $_POST['pJour'],
+		'pSoir' => $_POST['pSoir'],
+		'pNuit' => $_POST['pNuit'],
+		'pFDS' => $_POST['pFDS'],
+		'oJour' => $_POST['oJour'],
+		'oSoir' => $_POST['oSoir'],
+		'oNuit' => $_POST['oNuit'],
+		'oFDS' => $_POST['oFDS'],
+		'rJour' => $_POST['rJour'],
+		'rSoir' => $_POST['rSoir'],
+		'rNuit' => $_POST['rNuit'],
+		'rFDS' => $_POST['rFDS'],
+		'paba' => $_POST['paba'],
+
+		'cinema' => $_POST['cinema'],
+		'bars' => $_POST['bars'],
+		'ecole' => $_POST['ecole'],
+		'expositions' => $_POST['expositions'],
+		'restaurants' => $_POST['restaurants'],
+		'prison' => $_POST['prison'],
+		'hopital' => $_POST['hopital'],
+		'clinique' => $_POST['clinique'],
+		'chsld' => $_POST['chsld'],
+		'appartements' => $_POST['appartements'],
+		'hotel' => $_POST['hotel'],
+		'accueil' => $_POST['accueil'],
+		'hebergements' => $_POST['hebergements'],
+		'bureaux' => $_POST['bureaux'],
+		'cabinets' => $_POST['cabinets'],
+		'magasins' => $_POST['magasins'],
+		'detaillants' => $_POST['detaillants'],
+		'commerce' => $_POST['commerce'],
+		'ateliers' => $_POST['ateliers'],
+		'entrepot' => $_POST['entrepot'],
+		'usine' => $_POST['usine'],
+		'stationnement' => $_POST['stationnement'],
+		'specifiez' => $_POST['specifiez'],
+		
+		'sai' => $_POST['sai'],
+		'saiMarque' => $_POST['saiMarque'],
+		'adressable' => $_POST['adressable'],
+		'zoneX' => $_POST['zoneX'],
+		'unEtape' => $_POST['unEtape'],
+		'deuxetape' => $_POST['deuxetape'],
+		'etp' => $_POST['etp'],
+		'periode' => $_POST['periode'],
+		'pheure' => $_POST['pheure'],
+		'panneauS' => $_POST['panneauS'],
+		'annonciateur' => $_POST['annonciateur'],
+		'textannonciateur' => $_POST['textannonciateur'],
+		'rac' => $_POST['rac'],
+		'racNomTel' => $_POST['racNomTel'],
+		'scu' => $_POST['scu'],
+		'scuMarque' => $_POST['scuMarque'],
+
+
+		'rda' => $_POST['rda'],
+		'adv' => $_POST['adv'],
+		'pressE' => $_POST['pressE'],
+		'dea' => $_POST['dea'],
+		'rdrm' => $_POST['rdrm'],
+		'tac' => $_POST['tac'],
+		'aaag' => $_POST['aaag'],
+		'autreS' => $_POST['autreS'],
+
+		'sdga' => $_POST['sdga'],
+		'eau' => $_POST['eau'],
+		'air' => $_POST['air'],
+		'dssogs' => $_POST['dssogs'],
+		'dtlb' => $_POST['dtlb'],
+		'pompeAfeu' => $_POST['pompeAfeu'],
+		'pafeu' => $_POST['pafeu'],
+		'ralg' => $_POST['ralg'],
+		'vds' => $_POST['vds'],
+		'cageE' => $_POST['cageE'],
+		'autreShuitdeux' => $_POST['autreShuitdeux'],
+		'autreShuit' => $_POST['autreShuit'],
+		'bid' => $_POST['bid'],
+		'raccordP' => $_POST['raccordP'],
+		'raccord' => $_POST['raccord'],
+		'extincteursp' => $_POST['extincteursp'],
+		'typeE' => $_POST['typeE'],
+		'sep' => $_POST['sep'],
+		'efixe' => $_POST['efixe'],
+		'efixetext' => $_POST['efixetext'],
+		'relieUn' => $_POST['relieUn'],
+		'eGaz' => $_POST['eGaz'],
+		'eGazText' => $_POST['eGazText'],
+		'reliedeux' => $_POST['reliedeux'],
+		'preaction' => $_POST['preaction'],
+		'delugue' => $_POST['delugue'],
+		'delugueText' => $_POST['delugueText'],
+		'relietrois' => $_POST['relietrois'],
+		'autresectionhuit' => $_POST['autresectionhuit'],
+		'autersHuitText' => $_POST['autersHuitText'],
+		'reliequatre' => $_POST['reliequatre'],
+
+		'vpea' => $_POST['vpea'],
+		'panneauA' => $_POST['panneauA'],
+		'StationM' => $_POST['StationM'],
+		'detecteurD' => $_POST['detecteurD'],
+		'barreP' => $_POST['barreP'],
+		'BoutonP' => $_POST['BoutonP'],
+		'cle' => $_POST['cle'],
+		'autresneuf' => $_POST['autresneuf'],
+		'autreneufText' => $_POST['autreneufText'],
+		'retenueM' => $_POST['retenueM'],
+		'rideau' => $_POST['rideau'],
+		'Systemed' => $_POST['Systemed'],
+		'parPA' => $_POST['parPA'],
+		'controle' => $_POST['controle'],
+		'controlText' => $_POST['controlText'],
+		'spe' => $_POST['spe'],
+		'sss' => $_POST['sss'],
+		'toutb' => $_POST['toutb'],
+		'sdcc' => $_POST['sdcc'],
+		'sdccText' => $_POST['sdccText'],
+		'sas' => $_POST['sas'],
+		'sasText' => $_POST['sasText'],
+
+		'uea' => $_POST['uea'],
+		'udl' => $_POST['udl'],
+		'generatrice' => $_POST['generatrice'],
+		'modele' => $_POST['modele'],
+		'amp' => $_POST['amp'],
+		'exteroeir' => $_POST['exteroeir'],
+		'surtoit' => $_POST['surtoit'],
+		'interieur' => $_POST['interieur'],
+		'interieurText' => $_POST['interieurText'],
+		'diesel' => $_POST['diesel'],
+		'gazn' => $_POST['gazn'],
+		'essence' => $_POST['essence'],
+		'Propane' => $_POST['Propane'],
+
+		'gaznaturel' => $_POST['gaznaturel'],
+		'gazp' => $_POST['gazp'],
+		'autrereservoir' => $_POST['autrereservoir'],
+		'autrereservoirtext' => $_POST['autrereservoirtext'],
+		'planetage' => $_POST['planetage'],
+
+		'autreinfo' => $_POST['autreinfo'],
+
+		'paneauAlarmeP' => $_POST['paneauAlarmeP'],
+		'ExterieurP' => $_POST['ExterieurP'],
+		'interieurP' => $_POST['interieurP'],
+		'boutonsilenceP' => $_POST['boutonsilenceP'],
+		'remiseP' => $_POST['remiseP'],
+		'accusedeP' => $_POST['accusedeP'],
+		'PanneauP' => $_POST['PanneauP'],
+		'microP' => $_POST['microP'],
+		'teleP' => $_POST['teleP'],
+		'zones' => $_POST['zones'],
+		'systemeP' => $_POST['systemeP'],
+		'vueP' => $_POST['vueP'],
+		'chaqueP' => $_POST['chaqueP'],
+		'vanneP' => $_POST['vanneP'],
+		'vannedeP' => $_POST['vannedeP'],
+		'interrupteurP' => $_POST['interrupteurP'],
+		'vanneetP' => $_POST['vanneetP'],
+		'pompeaP' => $_POST['pompeaP'],
+		'vuedP' => $_POST['vuedP'],
+		'panneaudecP' => $_POST['panneaudecP'],
+		'boutonetP' => $_POST['boutonetP'],
+		'systemesP' => $_POST['systemesP'],
+		'bonbonneP' => $_POST['bonbonneP'],
+		'declencheurP' => $_POST['declencheurP'],
+		'preactionP' => $_POST['preactionP'],
+		'exterieurPhoto' => $_POST['exterieurPhoto'],
+		'interieurPhoto' => $_POST['interieurPhoto'],
+		'generatriceP' => $_POST['generatriceP'],
+		'vuePhoto' => $_POST['vuePhoto'],
+		'panneaudeP' => $_POST['panneaudeP'],
+		'boutonarretP' => $_POST['boutonarretP'],
+		'ups' => $_POST['ups'],
+		'ascenseursP' => $_POST['ascenseursP'],
+		'panneaurappelP' => $_POST['panneaurappelP'],
+		'boutonrappel' => $_POST['boutonrappel'],
+		'panneauintP' => $_POST['panneauintP'],
+		'systemeappelP' => $_POST['systemeappelP'],
+		'desenfumageP' => $_POST['desenfumageP'],
+		'PanneaucontroleP' => $_POST['PanneaucontroleP'],
+
+
+	],'psiSolo');
 	exit;
 }
+
+// //  Creation du ficher excel pour sauvegarde local.
+// if ($action == "copie") {
+// 	$datas = array($_POST);
+// 	//Supprime lelement action dans le tab.
+// 	unset($datas[0]["action"]);
+// 	require '../class/class.csv.php'; 
+// 	CSV::export($datas,'PSI');
+// 	exit;
+// }
 
 
 if ($action == "CREATE") {
